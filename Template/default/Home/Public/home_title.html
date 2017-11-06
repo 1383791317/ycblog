@@ -1,0 +1,67 @@
+<div class="navbar navbar-fixed-top">
+
+    <div class="navbar-inner">
+
+        <div class="container">
+
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <a class="brand" href="./">YC BLOG</a>
+
+            <div class="nav-collapse">
+
+                <ul class="nav pull-right">
+                        <li><a href="/" onclick="recordId('/',0)">首页</a></li>
+                   <volist name="articleType" id="v">
+                       <li><a href="__APP__/Home/Index/category/tid/<{$v.tid}>"><{$v.name}></a></li>
+                   </volist>
+                    <li class="divider-vertical"></li>
+                    <if condition="$Think.session.ycblogyangchaouserinfo eq ''">
+                        <li class="dropdown" style="width:100px;padding-left: 20px;">
+
+                            <p data-toggle="dropdown" class="dropdown-toggle">
+                                登录
+                            </p>
+                        </li>
+                        <else/>
+                        <li class="dropdown">
+
+                            <p data-toggle="dropdown" class="dropdown-toggle">
+                                Rod Howard <b class ="caret"></b>
+                            </p>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="./account.html"><i class="icon-user"></i> Account Setting  </a>
+                                </li>
+
+                                <li>
+                                    <a href="./change_password.html"><i class="icon-lock"></i> Change Password</a>
+                                </li>
+
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="./"><i class="icon-off"></i> Logout</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </if>
+                    <li>
+                        <form class="search_form_title" action="__APP__/Home/Index/search" method="get">
+                        <input class="search_whole_title" value="" name="keywords" placeholder="全站搜索">
+                        <input type="submit" class="search_button_title" value="GO"/>
+                        </form></li>
+                </ul>
+
+            </div> <!-- /nav-collapse -->
+
+        </div> <!-- /container -->
+
+    </div> <!-- /navbar-inner -->
+
+</div> <!-- /navbar -->

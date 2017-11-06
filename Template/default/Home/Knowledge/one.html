@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Public/home_header" title="{$knowledge.title}" keywords="{$knowledge.keyword}" description="{$knowledge.description}"/>
+    <style>
+        @media only screen and (min-width: 100px) and (max-width: 600px) {
+            .my_css_content{width: 300px; overflow: hidden;}
+        }
+        @media only screen and (min-width: 600px) and (max-width: 900px) {
+            .my_css_content{width: 450px; overflow: hidden;}
+        }
+        @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+            .my_css_content{width: 600px; overflow: hidden;}
+        }
+    </style>
+</head>
+
+<body>
+
+<include file="Public/home_title"/>
+<div id="content">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span8">
+                <div class="row">
+                    <div class="span8">
+                        <div class="widget">
+                            <div class="widget-content">
+                                <h2 style="text-align: center">
+                                    <{$knowledge.title}>
+                                </h2>
+                                <ul class="my_css_title my_css_title_article">
+                                    <li><i class="icon-th-list"></i><{$knowledge.author}>
+                                    </li>
+                                    <li>
+                                        <i class="icon-th-list"></i><a><{$knowledge.add_time}></a>
+                                    </li>
+                                </ul>
+                                <div class="hr_title_bottom">   <hr/></div>
+
+                                <div class="my_css_content">
+                                    <{$knowledge.content}>
+                                    <p style="text-align: center"><{$Think.config.COPYRIGHT_WORD}></p>
+                                </div>
+                            </div> <!-- /widget-content -->
+
+                        </div> <!-- /widget -->
+                    </div>
+                </div> <!-- /row -->
+
+            </div>
+            <include file="Public/home_k_right"/>
+        </div>
+    </div>
+
+</div>
+
+
+<include file="Public/home_footer"/>
+
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<include file="Public/home_footer_js"/>
+
+</body>
+</html>

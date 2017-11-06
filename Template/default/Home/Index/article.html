@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Public/home_header" title="{$article.title}" keywords="{$article.keywords}" description="{$article.description}"/>
+    <style>
+        @media only screen and (min-width: 100px) and (max-width: 600px) {
+            .my_css_content{width: 300px;overflow: hidden;}
+        }
+        @media only screen and (min-width: 600px) and (max-width: 900px) {
+            .my_css_content{width: 450px;overflow: hidden;}
+        }
+        @media only screen and (min-width: 1000px) and (max-width: 1200px) {
+            .my_css_content{width: 600px;overflow: hidden;}
+        }
+    </style>
+</head>
+
+<body>
+
+<include file="Public/home_title"/>
+<div id="content">
+<div class="container">
+
+    <div class="row">
+
+        <div class="span8">
+            <div class="row">
+                <div class="span8">
+                    <div class="widget">
+                        <div class="widget-content">
+                            <h2 style="text-align: center">
+                                <{$article.title}>
+                            </h2>
+                            <ul class="my_css_title my_css_title_article">
+                                <li><i class="icon-th-list"></i><{$article.author}>
+                                </li>
+                                <li>
+                                    <i class="icon-th-list"></i><a><{$article.add_time}></a>
+                                </li>
+                                <li>
+                                    <i class="icon-th-list"></i><a><{$article.name|}></a>
+                                </li>
+                                <li>
+                                    <i class="icon-th-list"></i><a><volist name="libs" id="v"><{$v.name}>&nbsp;&nbsp;&nbsp;</volist></a>
+                                </li>
+                            </ul>
+                            <div class="hr_title_bottom">   <hr/></div>
+
+                            <div class="my_css_content">
+                                 <{$article.content}>
+                                <div class="content_footer">
+                                    <p><b>上一篇：</b><if condition="$prev.title eq ''"><i style="color: #61CAD0">没有啦&nbsp;~\(≧▽≦)/~</i><else/><a href="__APP__/Home/Index/article/aid/<{$prev.id}>"><{$prev.title}></a></if></p>
+                                    <p><b>下一篇：</b><if condition="$next.title eq ''"><i style="color: #61CAD0">没有啦&nbsp;~\(≧▽≦)/~</i><else/><a href="__APP__/Home/Index/article/aid/<{$next.id}>"><{$next.title}></a></if></p>
+                                </div>
+                                <br/>
+                                <p style="text-align: center"><{$Think.config.COPYRIGHT_WORD}></p>
+                            </div>
+                        </div> <!-- /widget-content -->
+                    </div> <!-- /widget -->
+                </div>
+            </div> <!-- /row -->
+
+        </div>
+        <include file="Public/home_right"/>
+    </div>
+</div>
+
+</div>
+
+
+<include file="Public/home_footer"/>
+
+
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<include file="Public/home_footer_js"/>
+
+</body>
+</html>

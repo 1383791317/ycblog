@@ -1,0 +1,71 @@
+.my_css_content{float: left;margin-top:10px;}
+.my_css_yue{display: block;line-height: 25px;background: #00a0e9;padding: 0 8px;border-radius: 5px;position: absolute;
+    bottom:13px;right: 15px}
+.my_css_yue>a{color: #fff9ec;}
+.my_css_content_img>img{float:left; width: 220px;height:165px; margin-right:20px; }
+.my_css_title_article{border-bottom:1px solid #ffffff;padding-bottom: 10px; }
+@media only screen and (min-width: 100px) and (max-width: 1200px) {
+    .my_css_title>li{display:block;float:left;width: 180px;height: 18px;}
+    .my_css_content_img>img{display: none;}
+    .pages a,
+    .pages span {
+        display: inline-block;
+        padding: 5px 10px;
+        margin: 0 1px;
+        border: 1px solid #f0f0f0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .search_form{display: none}
+    .search_whole_title{margin-left: 20px;}
+    .search_button_title{ background-color: #00B83F;border: 1px solid #000000;color: #ffffff}
+}
+@media only screen and (min-width: 667px) and (max-width: 8000px) {
+    .my_css_title>li{display:block;float:left;width: 170px;height: 18px}
+    .pages a,
+    .pages span {
+        display: inline-block;
+        padding: 5px 15px;
+        margin: 0 1px;
+        border: 1px solid #f0f0f0;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+    }
+    .search_form_title{display: none}
+}
+.search_whole{ height: 32px;}
+.search_button{color: #00a0e9; line-height: 30px;background-color: #fff5d4;width: 40px; border-radius: 5px; border-style: solid; margin-bottom: 9px;padding: 5px 10px;}
+.search_form{margin-bottom: 5px;}
+.content_footer{padding-top: 50px;}
+.link_content>li{display:block; padding-top: 10px;}
+.link_content>li>a{padding-left: 10px;}
+.link_content>li>a:hover{text-decoration: none;font-size: 18px;color: rebeccapurple}
+/********************************************************************/
+.pages{text-align: center;padding-bottom: 25px;}
+.pages a,
+.pages li {
+    display: inline-block;
+    list-style: none;
+    text-decoration: none;
+    color:  #00A5E2;
+}
+
+.pages a.first,
+.pages a.prev,
+.pages a.next,
+.pages a.end {
+    margin: 5px;
+}
+
+.pages a:hover {
+    border-color: #00a0e9;
+}
+
+.pages span.current {
+    background:  #00a0e9;
+    color: #FFF;
+    font-weight: 700;
+    border-color:  #00a0e9;
+}

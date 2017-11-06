@@ -1,0 +1,117 @@
+<style>
+    .music_logo>a{ position: fixed;  left: 10px;  top: 60%;}
+    .music_logo >a >img{
+        border-radius: 50px;opacity: 0.5;
+    }
+    .music_logo>a :hover{
+        opacity: 1;
+        transform:rotate(90deg);
+        -ms-transform:rotate(90deg); 	/* IE 9 */
+        -moz-transform:rotate(90deg); 	/* Firefox */
+        -webkit-transform:rotate(90deg); /* Safari 和 Chrome */
+        -o-transform:rotate(90deg);
+    }
+</style>
+<div class="music_logo"><a href="javascript:;" title="隐藏或显示播放器"  onclick="noneAudio()"><img src="__HOME_IMG__/music_img/39e6a82e5d68f6baea9ddeb23004b0ae.jpg" width="40" height="40"></a></div>
+<div class="audio-box" style="height: 85px;">
+    <div class="audio-container">
+        <div class="audio-cover"></div>
+        <div class="audio-view">
+            <h3 class="audio-title">未知歌曲</h3>
+            <div class="audio-body">
+                <div class="audio-backs">
+                    <div class="audio-this-time">00:00</div>
+                    <div class="audio-count-time">00:00</div>
+                    <div class="audio-setbacks">
+                        <i class="audio-this-setbacks">
+                            <span class="audio-backs-btn"></span>
+                        </i>
+                        <span class="audio-cache-setbacks">
+							</span>
+                    </div>
+                </div>
+            </div>
+            <div class="audio-btn">
+                <div class="audio-select">
+                    <div class="audio-prev"></div>
+                    <div class="audio-play"></div>
+                    <div class="audio-next"></div>
+                    <div class="audio-menu"></div>
+                    <div class="audio-volume"></div>
+                </div>
+                <div class="audio-set-volume">
+                    <div class="volume-box">
+                        <i><span></span></i>
+                    </div>
+                </div>
+                <div class="audio-list">
+                    <div class="audio-list-head">
+                        <p>☺随心听</p>
+                        <span class="menu-close">关闭</span>
+                    </div>
+                    <ul class="audio-inline">
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="__HOME_JS__/jquery.min.js"></script>
+<script type="text/javascript" src="__HOME_JS__/audio.js"></script>
+<script type="text/javascript">
+    $(function(){
+        var song = [
+            {
+                'cover' : '__HOME_IMG__/music_img/cover.jpg',
+                'src' : '__HOME_MUSIC__/Hoaprox - Ngẫu Hứng.mp3',
+                'title' : 'Ngẫu Hứng PDD洪荒之力'
+            },
+            {
+                'cover' : '__HOME_IMG__/music_img/cover.jpg',
+                'src' : '__HOME_MUSIC__/Pianoboy - The truth that you leave.mp3',
+                'title' : 'The truth that you leave'
+            },
+            {
+                'cover' : '__HOME_IMG__/music_img/cover2.jpg',
+                'src' : '__HOME_MUSIC__/Martin Tungevaag - Wicked Wonderland.mp3',
+                'title' : 'Wicked Wonderland'
+            },
+        ];
+
+        var audioFn = audioPlay({
+            song : song,
+            autoPlay : false  //是否立即播放第一首，autoPlay为true且song为空，会alert文本提示并退出
+        });
+
+        /* 向歌单中添加新曲目，第二个参数true为新增后立即播放该曲目，false则不播放 */
+        audioFn.newSong({
+            'cover' : '__HOME_IMG__/music_img/cover4.jpg',
+            'src' : 'http://so1.111ttt.com:8282/2016/5/06m/06/199061931237.m4a?tflag=1494769315&pin=a0b26b2dddd976d74724841f6d2641d6&ip=114.233.172.33#.mp3',
+            'title' : '极乐净土 - GARNiDELiA'
+        },false);
+
+        /* 暂停播放 */
+        //audioFn.stopAudio();
+
+        /* 开启播放 */
+        //audioFn.playAudio();
+
+        /* 选择歌单中索引为3的曲目(索引是从0开始的)，第二个参数true立即播放该曲目，false则不播放 */
+        //audioFn.selectMenu(3,true);
+
+        /* 查看歌单中的曲目 */
+        //console.log(audioFn.song);
+
+        /* 当前播放曲目的对象 */
+        //console.log(audioFn.audio);
+    });
+    function noneAudio()
+        {
+            $('.audio-box').toggle();
+        }
+</script>
+
+</body>
+</html>

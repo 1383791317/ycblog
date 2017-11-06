@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <include file="Public/home_header" title="" keywords="{$Think.config.WEB_KEYWORDS}" description="{$Think.config.WEB_DESCRIPTION}"/>
+</head>
+
+<body>
+
+<include file="Public/home_title"/>
+
+<div id="content">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span8">
+                <h1 class="page-title">
+                    标题含有&nbsp;&nbsp;<span style="color: red"><{$keyword}></span>&nbsp;&nbsp;关键字的文章
+                </h1>
+                <div class="row">
+                    <volist name="articles" id="v">
+                        <div class="span8">
+                            <div class="widget">
+                                <div class="widget-header">
+                                    <h3><{$v.title}></h3>
+                                </div> <!-- /widget-header -->
+
+                                <div class="widget-content">
+                                    <ul class="my_css_title">
+                                        <li><i class="icon-th-list"></i><{$v.author}>
+                                        </li>
+                                        <li>
+                                            <i class="icon-th-list"></i><{$v.add_time}>
+                                        </li>
+                                        <li>
+                                            <i class="icon-th-list"></i><a href="__APP__/Home/Index/category/tid/<{$v.article.tid}>"><{$v.name|}></a>
+                                        </li>
+                                        <li>
+                                            <i class="icon-th-list"></i> <volist name="v.lids" id="val"><a href="__APP__/Home/Index/label/lid/<{$val.lid}>"><{$val.name}></a>&nbsp;&nbsp;&nbsp;</volist>
+                                        </li>
+                                    </ul>
+                                    <div class="my_css_content">
+
+                                        <div class="my_css_content_img">
+                                            <img src="<{$v.article.image}>">
+                                        </div>
+
+                                        <div class="my_css_content_font">
+                                            <{$v.article.description}>的舒服撒发生沙发沙发沙发买了吗是什么发东方丽都撒木付所绿付所付多多所地已ID大幅度发达发生的 发发声方沙发沙发沙发买了吗是什么发东方丽都撒木付所绿付所付多多所地已ID大幅度发达发生的 发发声方沙发沙发沙发买了吗是什么发东方丽都撒木付所绿付所付多多所地已ID大幅度发达发生的 发发声方
+                                        </div>
+                                        <div class="my_css_yue"><a href="__APP__/Home/Index/article/aid/<{$v.id}>">阅读全文</a></div>
+                                    </div>
+                                </div> <!-- /widget-content -->
+
+                            </div> <!-- /widget -->
+                        </div>
+                    </volist>
+                </div> <!-- /row -->
+                <div class="pages"><{$page}></div>
+            </div> <!-- /span9 -->
+            <include file="Public/home_right"/>
+
+        </div> <!-- /row -->
+
+    </div> <!-- /container -->
+
+</div> <!-- /content -->
+
+<include file="Public/home_footer"/>
+
+
+<!-- Le javascript
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<include file="Public/home_footer_js"/>
+
+</body>
+</html>

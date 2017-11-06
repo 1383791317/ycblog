@@ -1,0 +1,49 @@
+<div id="content">
+
+    <div class="container">
+
+        <div class="row">
+
+            <div class="span8">
+                    <h1 class="page-title">
+                        <i class="<{$Think.config.WEB_K_ARR.css_name}>"></i>
+                        <{$Think.config.WEB_K_ARR.name}>
+                    </h1>
+                <div class="row">
+                    <volist name="knowledge" id="v">
+                        <div class="span8">
+                            <div class="widget">
+                                <div class="widget-header">
+                                    <h3><{$v.title}></h3>
+                                </div> <!-- /widget-header -->
+
+                                <div class="widget-content">
+                                    <ul class="my_css_title">
+                                        <li style="width: 90px"><i class="icon-user" style="font-size:15px; "></i><{$v.author}>
+                                        </li>
+                                        <li>
+                                            <i class="icon-time" style="font-size: 15px;"></i><{$v.add_time}>
+                                        </li>
+                                    </ul>
+                                    <div class="my_css_content">
+
+                                        <div class="my_css_content_font">
+                                            <{$v.description}>
+                                        </div>
+                                        <div class="my_css_yue"><a href="<{:U('Home/Knowledge/One',array('kid'=>$v['kid']))}>">阅读全文</a></div>
+                                    </div>
+                                </div> <!-- /widget-content -->
+
+                            </div> <!-- /widget -->
+                        </div>
+                    </volist>
+                </div> <!-- /row -->
+                <div class="pages"><{$page}></div>
+            </div> <!-- /span9 -->
+            <include file="Public/home_k_right"/>
+
+        </div> <!-- /row -->
+
+    </div> <!-- /container -->
+
+</div> <!-- /content -->
