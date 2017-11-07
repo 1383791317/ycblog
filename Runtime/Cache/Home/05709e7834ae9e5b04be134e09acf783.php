@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
-<title><?php if($tname["name"] != ''): ?><><?php endif; if($article["title"] != ''): ?><>-<?php endif; echo (C("WEB_NAME")); ?></title>
+<title><?php if($tname["name"] != ''): ?><>-<?php endif; if($article["title"] != ''): ?><>-<?php endif; if($knowledge["title"] != ''): ?><>-<?php endif; echo (C("WEB_NAME")); ?></title>
 <meta name="keywords" content="<?php echo (C("WEB_KEYWORDS")); ?>"/>
 <meta name="description" content="<?php echo (C("WEB_DESCRIPTION")); ?>"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -157,10 +157,10 @@
 </script>
 <div class="span3">
 
-        <form class="search_form" action="<?php echo U('Home/Index/search');?>" method="get">
-            <input class="search_whole" value="" name="keywords" placeholder="全站搜索">
-            <input type="submit" class="search_button" value="GO"/>
-        </form>
+    <form class="search_form" action="<?php echo U('Home/Index/search');?>" method="get">
+        <input class="search_whole" value="" name="keywords" placeholder="全站搜索">
+        <input type="submit" class="search_button" value="GO"/>
+    </form>
 
     <?php if($_SESSION['ycblog1224userinfo']!= ''): ?><div class="account-container">
 
@@ -199,6 +199,12 @@
                 <?php echo ($v["name"]); ?>
             </a>
         </li><?php endforeach; endif; else: echo "" ;endif; ?>
+        <li>
+            <a href="<?php echo U('Home/Knowledge/index');?>">
+                <i class="<?php echo (C("WEB_K_ARR.css_name")); ?>"></i><?php echo (C("WEB_K_ARR.name")); ?>
+
+            </a>
+        </li>
         <?php if($_SESSION['ycblogyangchaouserinfo']!= ''): ?><li>
                 <a href="./faq.html">
                     <i class="icon-user"></i>个人信息
@@ -217,10 +223,8 @@
             </div> <!-- /widget-header -->
 
             <div class="widget-content">
-                <p>
-                    <?php if(is_array($articleLabel)): $i = 0; $__LIST__ = $articleLabel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Home/Index/label',array('lid'=>$v['lid']));?>" class="badge badge-warning colorRandom" style="line-height: 20px;padding: 3px 7px;" ><?php echo ($v["name"]); ?></a>
+                    <?php if(is_array($articleLabel)): $i = 0; $__LIST__ = $articleLabel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Home/Index/label',array('lid'=>$v['lid']));?>" class="badge badge-warning colorRandom" style="line-height: 20px;margin: 3px 0 9px;" ><?php echo ($v["name"]); ?></a>
                        &nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
-                </p>
             </div> <!-- /widget-content -->
 
         </div> <!-- /widget -->

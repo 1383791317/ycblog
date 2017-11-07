@@ -3,8 +3,8 @@ return array(
 //*************************************网站设置****************************************
     'WEB_STATUS'                =>  '1',           //网站状态1:开启 0:关闭
     'WEB_CLOSE_WORD'            =>  '网站升级中，请稍后访问。',       //网站关闭时提示文字
-    'WEB_ICP_NUMBER'            =>  '豫ICP备14009546号-3',       // 网站ICP备案号
-    'ADMIN_EMAIL'               =>  'baijunyao@baijunyao.com',          // 站长邮箱
+    'WEB_ICP_NUMBER'            =>  '豫ICP备17044556号',       // 网站ICP备案号
+    'ADMIN_EMAIL'               =>  'yc_1224@163.com',          // 站长邮箱
     'WEB_K_ARR'                 =>array(
        'name'=>'知识点',
        'css_name'=>'icon-signal'
