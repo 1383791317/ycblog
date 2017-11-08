@@ -24,14 +24,14 @@ class WebsiteController extends AdminBaseController{
             $this->display();
         }
     }
-    public function delLink(){
+    public function dellink(){
         $id = I('get.id');
         $result = M('Link')
             ->where(array('id'=>$id))
             ->delete();
         echo json_encode($result);
     }
-    public function changeStatus(){
+    public function changestatus(){
         $status = I('get.status');
         $id = I('get.id');
         $result = M('Link')
@@ -39,7 +39,7 @@ class WebsiteController extends AdminBaseController{
             ->save(array('is_show'=>$status));
         echo json_encode($result);
     }
-    public function changeLink(){
+    public function changelink(){
         if (IS_POST){
             $id = I('post.id');
             unset($_POST['id']);
@@ -55,7 +55,7 @@ class WebsiteController extends AdminBaseController{
         }
     }
     //网站设置
-    public function configWebsite(){
+    public function configwebsite(){
         if (IS_POST){
            $result = writeWebConfig(I('post.'));
            if ($result){
@@ -67,7 +67,7 @@ class WebsiteController extends AdminBaseController{
             $this->display();
         }
     }
-    public function changePassword(){
+    public function changepassword(){
         if (IS_POST){
             $result =  D('Admin')->changePwd();
            echo $result;
@@ -83,7 +83,7 @@ class WebsiteController extends AdminBaseController{
             $this->display();
         }
     }
-    public function addMusic(){
+    public function addmusic(){
         if (IS_POST){
             print_r($_POST);
         }else{

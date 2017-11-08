@@ -123,7 +123,7 @@
             submitHandler:function(form){
                 $(form).ajaxSubmit({
                     type: 'post',
-                    url: "/index.php/Admin/Website/changePassword" ,
+                    url: "/index.php?s=/Admin/Website/changePassword" ,
                     success: function(data){
                          layer.msg(data,{icon:1,time:1000});
                     },

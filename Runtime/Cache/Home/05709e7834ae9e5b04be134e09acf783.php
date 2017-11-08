@@ -273,7 +273,8 @@
 
     <div class="container">
         <hr />
-        <p>&copy; 2012 Go Ideate.</p>
+        <p style="text-align: center">Copyright © 2017 <a href="http://www.ycblog.com.cn">www.yclog.com.cn</a> &nbsp;&nbsp;|&nbsp;&nbsp;<?php echo (C("WEB_ICP_NUMBER")); ?></p>
+        <p style="text-align: center">联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?></p>
     </div> <!-- /container -->
 
 </div> <!-- /footer -->

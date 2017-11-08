@@ -18,15 +18,15 @@ return array(
     'MODULE_ALLOW_LIST'     =>  array('Home','Admin'),  //允许访问列表
     'TMPL_EXCEPTION_FILE'   =>  APP_DEBUG ? THINK_PATH.'Tpl/think_exception.tpl' : './Template/default/Home/Public/404.html',                                    //404设置
 //***********************************SESSION设置*****************************
-    'SESSION_OPTIONS'       =>  array(
-        'name'              =>  'BJYSESSION',                 //设置session名
-        'expire'            =>  24*3600*15,                   //SESSION保存15天
-        'use_trans_sid'     =>  1,                            //跨页传递
-        'use_only_cookies'  =>  0,                            //是否只开启基于cookies的session的会话方式
-    ),
+//    'SESSION_OPTIONS'       =>  array(
+//        'name'              =>  'BJYSESSION',                 //设置session名
+//        'expire'            =>  24*3600*15,                   //SESSION保存15天
+//        'use_trans_sid'     =>  1,                            //跨页传递
+//        'use_only_cookies'  =>  0,                            //是否只开启基于cookies的session的会话方式
+//    ),
 //***********************************URL*************************************
-    'URL_MODEL'             =>  1,                            // 为了兼容性更好而设置成1 如果确认服务器开启了mod_rewrite 请设置为 2
-    'URL_CASE_INSENSITIVE'  =>  false,                        // 区分url大小写
+    'URL_MODEL'             =>  3,                            // 为了兼容性更好而设置成1 如果确认服务器开启了mod_rewrite 请设置为 2
+    'URL_CASE_INSENSITIVE'  =>  true,                        // 区分url大小写
     'VIEW_PATH' => TMPL_PATH,
     'TMPL_L_DELIM' => '<{', // 模板引擎普通标签开始标记
 	'TMPL_R_DELIM' => '}>', // 模板引擎普通标签结束标记

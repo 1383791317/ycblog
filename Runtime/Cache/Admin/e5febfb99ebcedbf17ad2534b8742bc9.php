@@ -37,7 +37,7 @@
         <input type="text" name="" placeholder=" 公告标题" style="width:250px" class="input-text">
         <button name="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜公告</button>
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="dataLotdel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" data-title="添加分类" data-href="/index.php/Admin/Article/typeAdd" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加分类</a></span> <span class="r">共有数据：<strong><?php echo ($count); ?></strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="dataLotdel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" data-title="添加分类" data-href="/index.php?s=/Admin/Article/typeAdd" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加分类</a></span> <span class="r">共有数据：<strong><?php echo ($count); ?></strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
@@ -56,7 +56,7 @@
                     <td><?php echo ($v["name"]); ?></td>
                     <td><?php echo ($v["add_time"]); ?></td>
                     <td class="f-14 td-manage">
-                        <a style="text-decoration:none" class="ml-5" onClick="article_edit('标签编辑','/index.php/Admin/Article/changeType/tid/<?php echo ($v["tid"]); ?>','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'<?php echo ($v["tid"]); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                        <a style="text-decoration:none" class="ml-5" onClick="article_edit('标签编辑','/index.php?s=/Admin/Article/changeType/tid/<?php echo ($v["tid"]); ?>','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'<?php echo ($v["tid"]); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </tbody>
         </table>
@@ -106,7 +106,7 @@
         layer.confirm('确认要删除吗？',function(index){
             $.ajax({
                 type: 'get',
-                url: '/index.php/Admin/Article/delType/tid/'+id,
+                url: '/index.php?s=/Admin/Article/delType/tid/'+id,
                 dataType: 'json',
                 success: function(data){
                     if(data>0){
@@ -126,7 +126,7 @@
             if ($('#chk:checked')){
                 $(".checkbox:checked").each(function () {
                     var id =$(this).val();
-                    $.get("/index.php/Admin/Article/delType",{tid:id},function (data) {
+                    $.get("/index.php?s=/Admin/Article/delType",{tid:id},function (data) {
                         if (data>0) {
                             $(".checkbox:checked").parent().parent().remove();
                             layer.msg('删除成功', { icon: 5, time: 1000 })
@@ -138,7 +138,7 @@
             }else{
                 $(".checkbox:checked").each(function () {
                     var id =$(this).val();
-                    $.get("/index.php/Admin/Article/delLabel",{lid:id},function (data) {
+                    $.get("/index.php?s=/Admin/Article/delLabel",{lid:id},function (data) {
                         if (data>0) {
                             $(".checkbox:checked").parent().parent().remove();
                             layer.msg('删除成功', { icon: 5, time: 1000 })

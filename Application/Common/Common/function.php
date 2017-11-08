@@ -173,27 +173,27 @@ function subText($str,$len)
 }
 //处理U函数url
 function RU($url){
-    // 兼容 category/:cid\d 路由
-    if(preg_match('/\/index.php\/Home\/Index\/category\/tid\/\d+/', $url)){
-        $url=str_replace(array('/index.php/Home/Index','/tid'), '', $url);
-    }
-    // 兼容article/cid/:cid\d/:aid\d
-    if(preg_match('/\/index.php\/Home\/Index\/label\/lid\/\d+/', $url)){
-        $url=str_replace(array('/index.php/Home/Index','/lid'), '', $url);
-    }
-    // 兼容 article/tid/:tid\d/:aid\d
-    if(preg_match('/\/index.php\/Home\/Index\/article\/aid\/\d+/', $url)){
-        $url=str_replace(array('/index.php/Home/Index','/aid'), '', $url);
-    }
-    if(preg_match('/\/index.php\/Home\/Index\/search.html/', $url)){
-        $url=str_replace('/index.php/Home/Index', '', $url);
-        //$url=str_replace('keywords', 'sw', $url);
-    }
-    if(preg_match('/\/index.php\/Home\/Knowledge\/index.html/', $url)){
-        $url=str_replace(array('/index.php/Home','/index'), '', $url);
-    }
-    if(preg_match('/\/index.php\/Home\/Knowledge\/One\/kid\/\d+/', $url)){
-        $url=str_replace(array('/index.php/Home','/One/kid'), '', $url);
-    }
+//    // 兼容 category/:cid\d 路由
+//    if(preg_match('/\/index.php\/Home\/Index\/category\/tid\/\d+/', $url)){
+//        $url=str_replace(array('/index.php/Home/Index','/tid'), '', $url);
+//    }
+//    // 兼容article/cid/:cid\d/:aid\d
+//    if(preg_match('/\/index.php\/Home\/Index\/label\/lid\/\d+/', $url)){
+//        $url=str_replace(array('/index.php/Home/Index','/lid'), '', $url);
+//    }
+//    // 兼容 article/tid/:tid\d/:aid\d
+//    if(preg_match('/\/index.php\/Home\/Index\/article\/aid\/\d+/', $url)){
+//        $url=str_replace(array('/index.php/Home/Index','/aid'), '', $url);
+//    }
+//    if(preg_match('/\/index.php\/Home\/Index\/search.html/', $url)){
+//        $url=str_replace('/index.php/Home/Index', '', $url);
+//        //$url=str_replace('keywords', 'sw', $url);
+//    }
+//    if(preg_match('/\/index.php\/Home\/Knowledge\/index.html/', $url)){
+//        $url=str_replace(array('/index.php/Home','/index'), '', $url);
+//    }
+//    if(preg_match('/\/index.php\/Home\/Knowledge\/One\/kid\/\d+/', $url)){
+//        $url=str_replace(array('/index.php/Home','/One/kid'), '', $url);
+//    }
     return $url;
 }

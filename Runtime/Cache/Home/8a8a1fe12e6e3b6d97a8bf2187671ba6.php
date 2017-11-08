@@ -50,14 +50,33 @@
 
                 <ul class="nav pull-right">
                         <li><a href="/" onclick="recordId('/',0)">首页</a></li>
-                   <?php if(is_array($articleType)): $i = 0; $__LIST__ = $articleType;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="/index.php/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                   <?php if(is_array($articleType)): $i = 0; $__LIST__ = $articleType;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="/index.php?s=/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     <li class="divider-vertical"></li>
-                    <?php if($_SESSION['ycblogyangchaouserinfo']== ''): ?><li class="dropdown" style="width:100px;padding-left: 20px;">
+                    <?php if($_SESSION['ycblogyangchaouserinfo']== ''): ?><li class="dropdown">
 
                             <p data-toggle="dropdown" class="dropdown-toggle">
-                                登录
+                                登录 <b class ="caret"></b>
                             </p>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="./account.html"> <img src="/Template/default/Home/Public/img/qq.png" width="20px"/> QQ  </a>
+                                </li>
+
+                                <li>
+                                    <a href="./change_password.html"><img src="/Template/default/Home/Public/img/weibo.png" width="20px"/></i> 微博</a>
+                                </li>
+                                <li>
+                                    <a href="./account.html"> <img src="/Template/default/Home/Public/img/zhanghao.png" width="20px"/>  账号 </a>
+                                </li>
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="./"><a href="./account.html"> <img src="/Template/default/Home/Public/img/zhuce.png" width="20px" style="margin-bottom: 5px"/>  注册 </a></a>
+                                </li>
+                            </ul>
                         </li>
+                        <li class="divider-vertical"></li>
                         <?php else: ?>
                         <li class="dropdown">
 
@@ -80,9 +99,10 @@
                                     <a href="./"><i class="icon-off"></i> Logout</a>
                                 </li>
                             </ul>
-                        </li><?php endif; ?>
+                        </li>
+                        <li class="divider-vertical"></li><?php endif; ?>
                     <li>
-                        <form class="search_form_title" action="/index.php/Home/Index/search" method="get">
+                        <form class="search_form_title" action="/index.php?s=/Home/Index/search" method="get">
                         <input class="search_whole_title" value="" name="keywords" placeholder="全站搜索">
                         <input type="submit" class="search_button_title" value="GO"/>
                         </form></li>
@@ -128,10 +148,10 @@
                                             <i class="icon-time" style="font-size: 15px;"></i><?php echo ($v["add_time"]); ?>
                                         </li>
                                         <li style="width: 90px">
-                                            <i class="icon-th-list"></i><a href="/index.php/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a>
+                                            <i class="icon-th-list"></i><a href="/index.php?s=/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a>
                                         </li>
                                         <li>
-                                            <i class="icon-tags"></i> <?php if(is_array($v["lids"])): $i = 0; $__LIST__ = $v["lids"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="/index.php/Home/Index/label/lid/<?php echo ($val["lid"]); ?>"><?php echo ($val["name"]); ?></a>&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+                                            <i class="icon-tags"></i> <?php if(is_array($v["lids"])): $i = 0; $__LIST__ = $v["lids"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="/index.php?s=/Home/Index/label/lid/<?php echo ($val["lid"]); ?>"><?php echo ($val["name"]); ?></a>&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
                                         </li>
                                     </ul>
                                     <div class="my_css_content">
@@ -206,8 +226,8 @@
             </a>
         </li><?php endforeach; endif; else: echo "" ;endif; ?>
         <li>
-            <a href="<?php echo U('Home/Knowledge/index');?>">
-                <i class="<?php echo (C("WEB_K_ARR.css_name")); ?>"></i><?php echo (C("WEB_K_ARR.name")); ?>
+            <a href="<?php echo U('Home/Knowledge/index');?>" style="font-size: 14px;">
+                <img src="/Template/default/Home/Public/img/zhishi.png" width="20px;" >&nbsp; <?php echo (C("WEB_K_ARR.name")); ?>
 
             </a>
         </li>
@@ -279,7 +299,8 @@
 
     <div class="container">
         <hr />
-        <p>&copy; 2012 Go Ideate.</p>
+        <p style="text-align: center">Copyright © 2017 <a href="http://www.ycblog.com.cn">www.yclog.com.cn</a> &nbsp;&nbsp;|&nbsp;&nbsp;<?php echo (C("WEB_ICP_NUMBER")); ?></p>
+        <p style="text-align: center">联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?></p>
     </div> <!-- /container -->
 
 </div> <!-- /footer -->

@@ -8,9 +8,8 @@
 
 </script>
 <div class="span3">
-
         <form class="search_form" action="<{:U('Home/Knowledge/index')}>" method="get">
-        <input class="search_whole" value="" name="keywords" placeholder="所搜<{$Think.config.WEB_K_ARR.name}>">
+        <input class="search_whole" value="" name="keywords" placeholder="搜索<{$Think.config.WEB_K_ARR.name}>">
         <input type="submit" class="search_button" value="GO"/>
     </form>
 
@@ -58,7 +57,7 @@
         </volist>
         <li>
             <a href="<{:U('Home/Knowledge/index')}>">
-                <i class="<{$Think.config.WEB_K_ARR.css_name}>"></i><{$Think.config.WEB_K_ARR.name}>
+                <img src="__HOME_IMG__/zhishi.png" width="20px;" > &nbsp;<{$Think.config.WEB_K_ARR.name}>
 
             </a>
         </li>
@@ -82,12 +81,10 @@
         </div> <!-- /widget-header -->
 
         <div class="widget-content">
-            <p>
                 <volist name="articleLabel" id="v" >
-                    <a href="<{:U('Home/Index/label',array('lid'=>$v['lid']))}>" class="badge badge-warning colorRandom" style="line-height: 20px;padding: 3px 7px;" ><{$v.name}></a>
+                    <a href="<{:U('Home/Index/label',array('lid'=>$v['lid']))}>" class="badge badge-warning colorRandom" style="line-height: 20px;margin: 3px 0 9px;" ><{$v.name}></a>
                     &nbsp;
                 </volist>
-            </p>
         </div> <!-- /widget-content -->
 
     </div> <!-- /widget -->

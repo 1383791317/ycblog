@@ -16,7 +16,7 @@ class ArticleController extends AdminBaseController{
         $this->kdb=D('Knowledge');
     }
     //文章列表
-    public function articleList(){
+    public function articlelist(){
         $info = $this->db->select();
         $count = $this->db->count();
         $this->assign('info',$info);
@@ -24,7 +24,7 @@ class ArticleController extends AdminBaseController{
         $this->display();
     }
     //添加文章
-    public function articleAddPage(){
+    public function articleaddpage(){
         if(IS_POST){
            echo $this->db->addData();
             //  echo $this->db->addData();
@@ -46,7 +46,7 @@ class ArticleController extends AdminBaseController{
         }
     }
     //修改文章
-    public function changeArticle(){
+    public function changearticle(){
         if (IS_POST){
             print_r( $this->db->changeData());
            // echo $this->db->changeData();
@@ -62,7 +62,7 @@ class ArticleController extends AdminBaseController{
         }
     }
     //更改状态
-    public function changeStatus(){
+    public function changestatus(){
         $id = I('get.id');
         $kid = I('get.kid');
         $status = I('get.status');
@@ -75,12 +75,12 @@ class ArticleController extends AdminBaseController{
         }
     }
     // 删除文章
-    public function delArticle(){
+    public function delarticle(){
         $result = $this->db->delData();
         print $result;
     }
     //标签列表
-    public function labelList(){
+    public function labellist(){
         $model = M('ArticleLabel');
         $label = $model->select();
         $count = $model->count();
@@ -89,7 +89,7 @@ class ArticleController extends AdminBaseController{
         $this->display();
     }
     //添加标签
-    public function labelAdd(){
+    public function labeladd(){
         if (IS_POST){
            $result = M('ArticleLabel')->add($_POST);
            echo $result;
@@ -98,7 +98,7 @@ class ArticleController extends AdminBaseController{
         }
     }
     //编辑列表
-    public function changeLabel(){
+    public function changelabel(){
         $model = M('ArticleLabel');
         if (IS_POST){
             $lid=I('post.lid');
@@ -116,12 +116,12 @@ class ArticleController extends AdminBaseController{
             $this->display();
         }
     }
-    public function delLabel(){
+    public function dellabel(){
         $result = M('ArticleLabel')->where("lid={$_GET['lid']}")->delete();
         echo $result;
     }
     //分类列表
-    public function typeList(){
+    public function typelist(){
         $model = M('ArticleType');
         $data = $model->select();
         $count = $model->count();
@@ -130,7 +130,7 @@ class ArticleController extends AdminBaseController{
         $this->display();
     }
     //添加分类
-    public function typeAdd(){
+    public function typeadd(){
         $model = M('ArticleType');
         if (IS_POST){
             $add = $model
@@ -142,7 +142,7 @@ class ArticleController extends AdminBaseController{
             $this->display();
         }
     }
-    public function changeType(){
+    public function changetype(){
         $model = M('ArticleType');
         if (IS_POST){
             $tid=I('post.tid');
@@ -162,19 +162,19 @@ class ArticleController extends AdminBaseController{
             $this->display();
         }
     }
-    public function delType(){
+    public function deltype(){
        $tid = I('get.tid');
        $result = M('ArticleType')
            ->where("tid={$tid}")
            ->delete();
        echo json_encode($result);
     }
-    public function knowledgeList(){
+    public function knowledgelist(){
         $assign = $this->kdb->selectData();
         $this->assign($assign);
         $this->display();
     }
-    public function knowledgeAdd(){
+    public function knowledgeadd(){
         if (IS_POST){
            // print_r($this->kdb->knowledgeAdd());
            echo $this->kdb->knowAdd();
