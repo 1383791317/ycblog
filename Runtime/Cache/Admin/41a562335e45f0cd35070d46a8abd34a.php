@@ -51,8 +51,8 @@
                         <a href="#" class="dropDown_A">admin <i class="Hui-iconfont">&#xe6d5;</i></a>
                         <ul class="dropDown-menu menu radius box-shadow">
                             <li><a href="javascript:;" onClick="myselfinfo()">个人信息</a></li>
-                            <li><a href="/index.php?s=/Admin/Login/quit">切换账户</a></li>
-                            <li><a href="/index.php?s=/Admin/Login/quit">退出</a></li>
+                            <li><a href="/index.php/Admin/Login/quit">切换账户</a></li>
+                            <li><a href="/index.php/Admin/Login/quit">退出</a></li>
                         </ul>
                     </li>
                     <li id="Hui-msg"> <a href="#" title="消息"><span class="badge badge-danger">1</span><i class="Hui-iconfont" style="font-size:18px">&#xe68a;</i></a> </li>
@@ -78,9 +78,9 @@
             <dd>
                 <ul>
                     <li><a data-href="<?php echo U('Admin/Article/articleList');?>" data-title="文章列表" href="javascript:void(0)">文章列表</a></li>
-                    <li><a data-href="/index.php?s=/Admin/Article/knowledgeList" data-title="<?php echo (C("WEB_K_ARR.name")); ?>列表" href="javascript:void(0)"><?php echo (C("WEB_K_ARR.name")); ?>列表</a></li>
-                    <li><a data-href="/index.php?s=/Admin/Article/typeList" data-title="分类列表" href="javascript:void(0)">分类列表</a></li>
-                    <li><a data-href="/index.php?s=/Admin/Article/labelList" data-title="标签列表" href="javascript:void(0)">标签列表</a></li>
+                    <li><a data-href="/index.php/Admin/Article/knowledgeList" data-title="<?php echo (C("WEB_K_ARR.name")); ?>列表" href="javascript:void(0)"><?php echo (C("WEB_K_ARR.name")); ?>列表</a></li>
+                    <li><a data-href="/index.php/Admin/Article/typeList" data-title="分类列表" href="javascript:void(0)">分类列表</a></li>
+                    <li><a data-href="/index.php/Admin/Article/labelList" data-title="标签列表" href="javascript:void(0)">标签列表</a></li>
                 </ul>
             </dd>
         </dl>
@@ -88,10 +88,10 @@
             <dt><i class="Hui-iconfont">&#xe62e;</i> 网站管理<i class="Hui-iconfont menu_dropdown-arrow">&#xe6d5;</i></dt>
             <dd>
                 <ul>
-                    <li><a data-href="/index.php?s=/Admin/Website/music" data-title="歌单" href="javascript:void(0)">歌单</a></li>
-                    <li><a data-href="/index.php?s=/Admin/Website/configWebsite" data-title="配置设置" href="javascript:void(0)">配置设置</a></li>
-                    <li><a data-href="/index.php?s=/Admin/Website/link" data-title="友链管理" href="javascript:void(0)">友链管理</a></li>
-                    <li><a data-href="/index.php?s=/Admin/Website/changePassword" data-title="修改密码" href="javascript:void(0)">修改密码</a></li>
+                    <li><a data-href="/index.php/Admin/Website/music" data-title="歌单" href="javascript:void(0)">歌单</a></li>
+                    <li><a data-href="/index.php/Admin/Website/configWebsite" data-title="配置设置" href="javascript:void(0)">配置设置</a></li>
+                    <li><a data-href="/index.php/Admin/Website/link" data-title="友链管理" href="javascript:void(0)">友链管理</a></li>
+                    <li><a data-href="/index.php/Admin/Website/changePassword" data-title="修改密码" href="javascript:void(0)">修改密码</a></li>
                     <li><a data-href="system-log.html" data-title="系统日志" href="javascript:void(0)">系统日志</a></li>
                 </ul>
             </dd>
@@ -113,7 +113,7 @@
     <div id="iframe_box" class="Hui-article">
         <div class="show_iframe">
             <div style="display:none" class="loading"></div>
-            <iframe scrolling="yes" frameborder="0" src="/index.php?s=/Admin/Index/welcome"></iframe>
+            <iframe scrolling="yes" frameborder="0" src="/index.php/Admin/Index/welcome"></iframe>
         </div>
     </div>
 </section>

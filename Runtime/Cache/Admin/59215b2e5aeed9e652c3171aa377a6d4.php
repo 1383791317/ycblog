@@ -39,7 +39,7 @@
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2">文章作者：</label>
             <div class="formControls col-xs-8 col-sm-9">
-                <input type="text" class="input-text" value="杨超" placeholder="" id="author" name="author">
+                <input type="text" class="input-text" value="Mr.Yang" placeholder="" id="author" name="author">
             </div>
         </div>
         <div class="row cl">

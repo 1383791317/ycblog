@@ -43,21 +43,15 @@
                 <input type="text" class="input-text" value="<?php echo ($article["author"]); ?>" placeholder="" id="author" name="author">
             </div>
         </div>
-        <!--<div class="row cl">-->
-            <!--<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章类型：</label>-->
-            <!--<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">-->
-				<!--<select name="tid" class="select">-->
-                    <!--<?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?>-->
-                         <!--<?php if($article["tid"] == $v.tid): ?>-->
-                            <!--<option value="<?php echo ($v["tid"]); ?>" selected><?php echo ($v["name"]); ?></option>-->
-                        <!--<?php endif; ?>-->
-                        <!--<?php if($article["tid"] != $v.tid): ?>-->
-                            <!--<option value="<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></option>-->
-                        <!--<?php endif; ?>-->
-                    <!--<?php endforeach; endif; else: echo "" ;endif; ?>-->
-				<!--</select>-->
-				<!--</span> </div>-->
-        <!--</div>-->
+      <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章类型：</label>
+            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="tid" class="select">
+                    <?php if(is_array($type)): $i = 0; $__LIST__ = $type;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i; if($article["tid"] == $v.tid): ?><option value="<?php echo ($v["tid"]); ?>" selected><?php echo ($v["name"]); ?></option><?php endif; ?>
+                           <option value="<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
+				</select>
+				</span> </div>
+        </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标签：</label>
             <div class="formControls col-xs-8 col-sm-9">
@@ -92,9 +86,9 @@
             <label class="form-label col-xs-4 col-sm-2">不显示：</label>
             <div class="formControls col-xs-8 col-sm-9 skin-minimal">
                 <div class="check-box">
-                    <?php if($article["is_show"] == 0): ?><input type="checkbox"  name="allowcomments" value="0" checked>
+                    <?php if($article["is_show"] == 0): ?><input type="checkbox"  name="is_show" value="0" checked>
                         <?php else: ?>
-                        <input type="checkbox" name="allowcomments" value="0"><?php endif; ?>
+                        <input type="checkbox" name="is_show" value="0"><?php endif; ?>
                     <label for="checkbox-pinglun">&nbsp;</label>
                 </div>
             </div>

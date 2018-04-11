@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>李明珠</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript">
+        var index = 10;
+        function changeTime()
+        {
+            document.getElementById("timeSpan").innerHTML = index;
+            index--;
+            if(index < 0){
+                window.location = "https://www.ycblog.com.cn";
+            }
+            else{
+                window.setTimeout("changeTime()",1000);
+            }
+        }
+    </script>
+    <style type="text/css">
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body onload="changeTime()">
+<div style="width: 100%;height:570px;background: url(img/20171110153610.jpg)no-repeat;background-size: 98% 570px;">
+    <br/>
+    <p style="size: 16px;text-align: center;color: #0f9ae0;">hello,beautiful girl..hh</p>
+    <i><span id="timeSpan" style="position: fixed; top:20px; right: 20px; size: 20px ;color: red">10</span></i>
+</div>
+</body>
+</html>
+
+
+

@@ -1,0 +1,36 @@
+[ 2018-03-30T07:13:14+08:00 ] 46.229.164.101 /index.php/robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.002651s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004415s ]
+ERR: 无法加载控制器:Robots.txt
+
+[ 2018-03-30T15:56:22+08:00 ] 66.249.79.65 /robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001911s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003594s ]
+ERR: 无法加载控制器:Robots.txt
+
+[ 2018-03-30T15:56:23+08:00 ] 66.249.79.92 /.well-known/apple-app-site-association
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001275s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002183s ]
+ERR: 无法加载控制器:.well-known
+
+[ 2018-03-30T16:01:32+08:00 ] 66.249.79.92 /.well-known/assetlinks.json
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002198s ]
+ERR: 无法加载控制器:.well-known
+
+[ 2018-03-30T16:07:06+08:00 ] 66.249.79.65 /apple-app-site-association
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001409s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002323s ]
+ERR: 无法加载控制器:Apple-app-site-association
+
+[ 2018-03-30T16:45:19+08:00 ] 46.229.164.101 /index.php/robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001343s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002245s ]
+ERR: 无法加载控制器:Robots.txt
+

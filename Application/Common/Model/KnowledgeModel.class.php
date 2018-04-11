@@ -27,7 +27,7 @@ class KnowledgeModel extends BaseModel{
         }
         if ($this->create($data)){
             if (empty($data['description'])){
-                $data['description']=subText(strip_tags($data['content']),55);
+                $data['description']=subText(strip_tags($data['content']),85);
             }
             if ($this->add($data)){
                 return '添加成功';
@@ -54,7 +54,7 @@ class KnowledgeModel extends BaseModel{
                 'tname'=>C('WEB_K_ARR')
             );
         }else if (empty($kid)){
-            $data = $this->select();
+            $data = $this->order("add_time desc")->select();
             $count = $this->count();
             $assgin = array(
                 'knowledge'=>$data,
@@ -93,9 +93,9 @@ class KnowledgeModel extends BaseModel{
         $new_data['content']=preg_replace('/src=\"\/Upload\/ueditor/','src="'.C('UPLOAD_IMG_URL'),$new_data['content']);
         if ($this->create($new_data)){
             if (empty($new_data['description'])){
-                $new_data['description']=subText(strip_tags($new_data['content']),55);
+                $new_data['description']=subText(strip_tags($new_data['content']),85);
             }
-            $result = $this->where(array('id'=>$kid))->save($new_data);
+            $result = $this->where(array('kid'=>$kid))->save($new_data);
             if ($result){
                 return '修改成功';
             }else{

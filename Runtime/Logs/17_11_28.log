@@ -1,0 +1,284 @@
+[ 2017-11-28T01:25:59+08:00 ] 123.125.67.224 /index.php/robots.txt
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001280s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002183s ]
+ERR: 无法加载控制器:Robots.txt
+
+[ 2017-11-28T01:40:07+08:00 ] 60.191.126.204 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001285s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002234s ]
+SQL: SHOW COLUMNS FROM `yc_link` [ RunTime:0.001605s ]
+SQL: SELECT * FROM `yc_link`  [ RunTime:0.001333s ]
+SQL: SHOW COLUMNS FROM `yc_article_type` [ RunTime:0.002161s ]
+SQL: SELECT * FROM `yc_article_type`  [ RunTime:0.000850s ]
+SQL: SHOW COLUMNS FROM `yc_article_label` [ RunTime:0.001951s ]
+SQL: SELECT * FROM `yc_article_label`  [ RunTime:0.000751s ]
+SQL: SHOW COLUMNS FROM `yc_article_view` [ RunTime:0.002533s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yc_article_view` WHERE ( `is_show` = 1 ) LIMIT 1   [ RunTime:0.001058s ]
+SQL: SELECT * FROM `yc_article_view` WHERE ( `is_show` = 1 ) ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.004447s ]
+SQL: SHOW COLUMNS FROM `yc_al_relation` [ RunTime:0.001845s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '48' )  [ RunTime:0.001120s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '50' )  [ RunTime:0.001228s ]
+NOTIC: [8] Undefined variable: tname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 63 行.
+NOTIC: [8] Undefined variable: lname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 64 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000600s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000681s ]
+NOTIC: [8] Undefined variable: article /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 5 行.
+NOTIC: [8] Undefined variable: knowledge /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 5 行.
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 53 行.
+NOTIC: [8] Use of undefined constant qq - assumed 'qq' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 61 行.
+NOTIC: [8] Undefined index: ycblog1224userinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 189 行.
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SHOW COLUMNS FROM `yc_article_logo` [ RunTime:0.002094s ]
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000743s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000511s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000828s ]
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 232 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.044934s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.045013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000509s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000578s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001418s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001496s ]
+
+[ 2017-11-28T05:39:09+08:00 ] 202.108.211.56 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001854s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003353s ]
+SQL: SHOW COLUMNS FROM `yc_link` [ RunTime:0.002092s ]
+SQL: SELECT * FROM `yc_link`  [ RunTime:0.001070s ]
+SQL: SHOW COLUMNS FROM `yc_article_type` [ RunTime:0.001734s ]
+SQL: SELECT * FROM `yc_article_type`  [ RunTime:0.000776s ]
+SQL: SHOW COLUMNS FROM `yc_article_label` [ RunTime:0.001612s ]
+SQL: SELECT * FROM `yc_article_label`  [ RunTime:0.000628s ]
+SQL: SHOW COLUMNS FROM `yc_article_view` [ RunTime:0.005186s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yc_article_view` WHERE ( `is_show` = 1 ) LIMIT 1   [ RunTime:0.004826s ]
+SQL: SELECT * FROM `yc_article_view` WHERE ( `is_show` = 1 ) ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.003209s ]
+SQL: SHOW COLUMNS FROM `yc_al_relation` [ RunTime:0.001416s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '48' )  [ RunTime:0.000855s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '50' )  [ RunTime:0.000781s ]
+NOTIC: [8] Undefined variable: tname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 63 行.
+NOTIC: [8] Undefined variable: lname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 64 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000574s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000655s ]
+NOTIC: [8] Undefined variable: article /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 5 行.
+NOTIC: [8] Undefined variable: knowledge /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 5 行.
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 53 行.
+NOTIC: [8] Use of undefined constant qq - assumed 'qq' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 61 行.
+NOTIC: [8] Undefined index: ycblog1224userinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 189 行.
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SHOW COLUMNS FROM `yc_article_logo` [ RunTime:0.001305s ]
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000688s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000734s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000639s ]
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 232 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.082266s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.082373s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.009840s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.009913s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.006932s ]
+INFO: [ app_end ] --END-- [ RunTime:0.007008s ]
+
+[ 2017-11-28T08:46:53+08:00 ] 222.142.186.18 /admin
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001296s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002253s ]
+NOTIC: [8] Undefined index: ycblogyangchaohangadminname /www/users/HA436620/WEB/Application/Common/Controller/AdminBaseController.class.php 第 14 行.
+NOTIC: [8] Undefined index: ycblogyangchaohangadminpwd /www/users/HA436620/WEB/Application/Common/Controller/AdminBaseController.class.php 第 15 行.
+
+[ 2017-11-28T08:46:53+08:00 ] 222.142.186.18 /index.php/Admin/Login/index.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001389s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002325s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000124s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000214s ]
+NOTIC: [8] Undefined index: name /www/users/HA436620/WEB/Runtime/Cache/Admin/2e3d368ee8be4d087dfaba7b5436b61c.php 第 32 行.
+NOTIC: [8] Undefined index: password /www/users/HA436620/WEB/Runtime/Cache/Admin/2e3d368ee8be4d087dfaba7b5436b61c.php 第 39 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.023922s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.023991s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000496s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000563s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001438s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001507s ]
+
+[ 2017-11-28T08:46:53+08:00 ] 222.142.186.18 /index.php/Admin/Login/lib/jquery/1.9.1/jquery.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002276s ]
+ERR: 非法操作:lib
+
+[ 2017-11-28T08:46:53+08:00 ] 222.142.186.18 /index.php/Admin/Login/static/h-ui/js/H-ui.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001264s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002214s ]
+ERR: 非法操作:static
+
+[ 2017-11-28T08:46:54+08:00 ] 222.142.186.18 /index.php/Admin/Login/static/h-ui/js/H-ui.min.js
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001281s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002228s ]
+ERR: 非法操作:static
+
+[ 2017-11-28T12:46:32+08:00 ] 124.237.35.66 /
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001313s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002240s ]
+SQL: SHOW COLUMNS FROM `yc_link` [ RunTime:0.001295s ]
+SQL: SELECT * FROM `yc_link`  [ RunTime:0.000519s ]
+SQL: SHOW COLUMNS FROM `yc_article_type` [ RunTime:0.001670s ]
+SQL: SELECT * FROM `yc_article_type`  [ RunTime:0.000642s ]
+SQL: SHOW COLUMNS FROM `yc_article_label` [ RunTime:0.001169s ]
+SQL: SELECT * FROM `yc_article_label`  [ RunTime:0.000535s ]
+SQL: SHOW COLUMNS FROM `yc_article_view` [ RunTime:0.002502s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yc_article_view` WHERE ( `is_show` = 1 ) LIMIT 1   [ RunTime:0.000993s ]
+SQL: SELECT * FROM `yc_article_view` WHERE ( `is_show` = 1 ) ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.002942s ]
+SQL: SHOW COLUMNS FROM `yc_al_relation` [ RunTime:0.001301s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '48' )  [ RunTime:0.000613s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '50' )  [ RunTime:0.000549s ]
+NOTIC: [8] Undefined variable: tname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 63 行.
+NOTIC: [8] Undefined variable: lname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 64 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000601s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000691s ]
+NOTIC: [8] Undefined variable: article /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 5 行.
+NOTIC: [8] Undefined variable: knowledge /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 5 行.
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 53 行.
+NOTIC: [8] Use of undefined constant qq - assumed 'qq' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 61 行.
+NOTIC: [8] Undefined index: ycblog1224userinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 189 行.
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SHOW COLUMNS FROM `yc_article_logo` [ RunTime:0.001573s ]
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000684s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000503s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 222 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000511s ]
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/08d30c77e78bd0ac29232fbc421b5dcd.php 第 232 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.042088s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.042166s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000624s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000722s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001467s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001541s ]
+
+[ 2017-11-28T16:17:31+08:00 ] 123.125.71.34 /Knowledge.html
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001440s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002366s ]
+SQL: SHOW COLUMNS FROM `yc_link` [ RunTime:0.002567s ]
+SQL: SELECT * FROM `yc_link`  [ RunTime:0.001475s ]
+SQL: SHOW COLUMNS FROM `yc_article_type` [ RunTime:0.002097s ]
+SQL: SELECT * FROM `yc_article_type`  [ RunTime:0.000926s ]
+SQL: SHOW COLUMNS FROM `yc_article_label` [ RunTime:0.001756s ]
+SQL: SELECT * FROM `yc_article_label`  [ RunTime:0.000808s ]
+SQL: SHOW COLUMNS FROM `yc_knowledge` [ RunTime:0.001572s ]
+NOTIC: [8] Undefined index: kid /www/users/HA436620/WEB/Application/Common/Model/KnowledgeModel.class.php 第 42 行.
+NOTIC: [8] Undefined index: keywords /www/users/HA436620/WEB/Application/Common/Model/KnowledgeModel.class.php 第 43 行.
+SQL: SELECT * FROM `yc_knowledge` ORDER BY add_time desc  [ RunTime:0.001513s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yc_knowledge` LIMIT 1   [ RunTime:0.000774s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000710s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000857s ]
+NOTIC: [8] Undefined variable: article /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 5 行.
+NOTIC: [8] Undefined index: title /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 5 行.
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 53 行.
+NOTIC: [8] Use of undefined constant qq - assumed 'qq' /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 61 行.
+NOTIC: [8] Undefined variable: page /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 156 行.
+NOTIC: [8] Undefined index: ycblog1224userinfo /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 173 行.
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 206 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 206 行.
+SQL: SHOW COLUMNS FROM `yc_article_logo` [ RunTime:0.001963s ]
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000723s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 206 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 206 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000730s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 206 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 206 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000769s ]
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/bb54e895a218ab16cc2f8698157f6d47.php 第 216 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.089249s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.089378s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000925s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001038s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.002209s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002331s ]
+
+[ 2017-11-28T23:04:45+08:00 ] 123.125.71.82 /index.php/Home/Index/category/tid/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.001268s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002177s ]
+SQL: SHOW COLUMNS FROM `yc_link` [ RunTime:0.001941s ]
+SQL: SELECT * FROM `yc_link`  [ RunTime:0.001144s ]
+SQL: SHOW COLUMNS FROM `yc_article_type` [ RunTime:0.001901s ]
+SQL: SELECT * FROM `yc_article_type`  [ RunTime:0.001094s ]
+SQL: SHOW COLUMNS FROM `yc_article_label` [ RunTime:0.001702s ]
+SQL: SELECT * FROM `yc_article_label`  [ RunTime:0.001061s ]
+SQL: SHOW COLUMNS FROM `yc_article_view` [ RunTime:0.002697s ]
+SQL: SHOW COLUMNS FROM `yc_type_logo_view` [ RunTime:0.002475s ]
+SQL: SELECT `css_name`,`name` FROM `yc_type_logo_view` WHERE ( tid=1 ) LIMIT 1   [ RunTime:0.002425s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `yc_article_view` WHERE ( `tid` = 1 ) AND ( `is_show` = 1 ) LIMIT 1   [ RunTime:0.001956s ]
+SQL: SELECT * FROM `yc_article_view` WHERE ( `tid` = 1 ) AND ( `is_show` = 1 ) ORDER BY add_time desc LIMIT 0,10   [ RunTime:0.007132s ]
+SQL: SHOW COLUMNS FROM `yc_al_relation` [ RunTime:0.002029s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '48' )  [ RunTime:0.001347s ]
+SQL: SELECT * FROM yc_al_relation a INNER JOIN yc_article_label as b on a.lid = b.lid  WHERE ( `aid` = '50' )  [ RunTime:0.001386s ]
+NOTIC: [8] Undefined variable: lname /www/users/HA436620/WEB/Application/Common/Model/ArticleViewModel.class.php 第 64 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000420s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000500s ]
+NOTIC: [8] Undefined variable: article /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 5 行.
+NOTIC: [8] Undefined variable: knowledge /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 5 行.
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 54 行.
+NOTIC: [8] Use of undefined constant qq - assumed 'qq' /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 62 行.
+NOTIC: [8] Undefined index: ycblog1224userinfo /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 190 行.
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 223 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 223 行.
+SQL: SHOW COLUMNS FROM `yc_article_logo` [ RunTime:0.001580s ]
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.001174s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 223 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 223 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000998s ]
+NOTIC: [8] Use of undefined constant logo_id - assumed 'logo_id' /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 223 行.
+NOTIC: [8] Array to string conversion /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 223 行.
+SQL: SELECT * FROM `yc_article_logo` WHERE ( logo_id = 11 ) LIMIT 1   [ RunTime:0.000850s ]
+NOTIC: [8] Undefined index: ycblogyangchaouserinfo /www/users/HA436620/WEB/Runtime/Cache/Home/8a8a1fe12e6e3b6d97a8bf2187671ba6.php 第 233 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.048841s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.048928s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000588s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000658s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.001430s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001505s ]
+

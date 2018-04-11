@@ -11,7 +11,6 @@
 <link href="/Template/default/Home/Public/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/Template/default/Home/Public/css/bootstrap-responsive.min.css" rel="stylesheet" />
 
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />
 <link href="/Template/default/Home/Public/css/font-awesome.css" rel="stylesheet" />
 
 <link href="/Template/default/Home/Public/css/adminia.css" rel="stylesheet" />
@@ -21,7 +20,7 @@
 <link href="/Template/default/Home/Public/css/my.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="/Template/default/Home/Public/css/audio.css">
 
-
+<script src="/Template/default/Home/Public/js/baidu_js_push.js"></script>
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -49,7 +48,7 @@
 
                 <ul class="nav pull-right">
                         <li><a href="/" onclick="recordId('/',0)">首页</a></li>
-                   <?php if(is_array($articleType)): $i = 0; $__LIST__ = $articleType;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="/index.php?s=/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
+                   <?php if(is_array($articleType)): $i = 0; $__LIST__ = $articleType;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="/index.php/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     <li class="divider-vertical"></li>
                     <?php if($_SESSION['ycblogyangchaouserinfo']== ''): ?><li class="dropdown">
 
@@ -59,11 +58,11 @@
 
                             <ul class="dropdown-menu">
                                 <li>
-                                    <a href="./account.html"> <img src="/Template/default/Home/Public/img/qq.png" width="20px"/> QQ  </a>
+                                    <a href="<?php echo U('Home/User/oauth_login',array('type'=>qq));?>"> <img src="/Template/default/Home/Public/img/qq.png" width="20px"/> QQ  </a>
                                 </li>
 
                                 <li>
-                                    <a href="./change_password.html"><img src="/Template/default/Home/Public/img/weibo.png" width="20px"/></i> 微博</a>
+                                    <a href=""><img src="/Template/default/Home/Public/img/weibo.png" width="20px"/></i> 微博</a>
                                 </li>
                                 <li>
                                     <a href="./account.html"> <img src="/Template/default/Home/Public/img/zhanghao.png" width="20px"/>  账号 </a>
@@ -101,7 +100,7 @@
                         </li>
                         <li class="divider-vertical"></li><?php endif; ?>
                     <li>
-                        <form class="search_form_title" action="/index.php?s=/Home/Index/search" method="get">
+                        <form class="search_form_title" action="/index.php/Home/Index/search" method="get">
                         <input class="search_whole_title" value="" name="keywords" placeholder="全站搜索">
                         <input type="submit" class="search_button_title" value="GO"/>
                         </form></li>
@@ -147,10 +146,10 @@
                                             <i class="icon-time" style="font-size: 15px;"></i><?php echo ($v["add_time"]); ?>
                                         </li>
                                         <li style="width: 90px">
-                                            <i class="icon-th-list"></i><a href="/index.php?s=/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a>
+                                            <i class="icon-th-list"></i><a href="/index.php/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a>
                                         </li>
                                         <li>
-                                            <i class="icon-tags"></i> <?php if(is_array($v["lids"])): $i = 0; $__LIST__ = $v["lids"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="/index.php?s=/Home/Index/label/lid/<?php echo ($val["lid"]); ?>"><?php echo ($val["name"]); ?></a>&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
+                                            <i class="icon-tags"></i> <?php if(is_array($v["lids"])): $i = 0; $__LIST__ = $v["lids"];if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$val): $mod = ($i % 2 );++$i;?><a href="/index.php/Home/Index/label/lid/<?php echo ($val["lid"]); ?>"><?php echo ($val["name"]); ?></a>&nbsp;&nbsp;&nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
                                         </li>
                                     </ul>
                                     <div class="my_css_content">
@@ -172,12 +171,18 @@
                 <div class="pages"><?php echo ($page); ?></div>
             </div> <!-- /span9 -->
             <script>
-   /* $(function(){
-
-       /!* console.log(getRandomColor());
-        document.getElementById("colorRandom").style.background = getRandomColor();
-*!/
-    });*/
+ function logout(){
+    $.ajax({
+      url:'./index.php/Home/User/logout',
+      type:'post',
+      success:function(){
+        $('.account-container').css('display','none');
+      },
+      error:function(){
+        alert('退出失败')
+      }
+    })
+   }
 
 </script>
 <div class="span3">
@@ -190,26 +195,22 @@
     <?php if($_SESSION['ycblog1224userinfo']!= ''): ?><div class="account-container">
 
            <div class="account-avatar">
-               <img src="./img/headshot.png" alt="" class="thumbnail" />
+               <img src="<?php echo ($_SESSION['ycblog1224userinfo']['head_img']); ?>" alt="" class="thumbnail" />
            </div> <!-- /account-avatar -->
 
            <div class="account-details">
 
-               <span class="account-name">Rod Howard</span>
+               <span class="account-name"><?php echo ($_SESSION['ycblog1224userinfo']['user_name']); ?></span>
 
-               <span class="account-role">Administrator</span>
+               <span class="account-role">登录次数: <?php echo ($_SESSION['ycblog1224userinfo']['login_times']); ?> 次</span>
 
                <span class="account-actions">
-							<a href="javascript:;">Profile</a> |
-
-							<a href="javascript:;">Edit Settings</a>
+							<a href="javascript:;" onclick="logout()">退出</a>
 						</span>
 
            </div> <!-- /account-details -->
-
        </div> <!-- /account-container -->
-
-       <hr /><?php endif; ?>
+ <hr /><?php endif; ?>
 
     <ul id="main-nav" class="nav nav-tabs nav-stacked">
 

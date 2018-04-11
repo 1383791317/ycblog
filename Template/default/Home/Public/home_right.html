@@ -1,10 +1,16 @@
 <script>
-   /* $(function(){
-
-       /!* console.log(getRandomColor());
-        document.getElementById("colorRandom").style.background = getRandomColor();
-*!/
-    });*/
+ function logout(){
+    $.ajax({
+      url:'./index.php/Home/User/logout',
+      type:'post',
+      success:function(){
+        $('.account-container').css('display','none');
+      },
+      error:function(){
+        alert('退出失败')
+      }
+    })
+   }
 
 </script>
 <div class="span3">
@@ -18,27 +24,22 @@
        <div class="account-container">
 
            <div class="account-avatar">
-               <img src="./img/headshot.png" alt="" class="thumbnail" />
+               <img src="<{$Think.session.ycblog1224userinfo.head_img}>" alt="" class="thumbnail" />
            </div> <!-- /account-avatar -->
 
            <div class="account-details">
 
-               <span class="account-name">Rod Howard</span>
+               <span class="account-name"><{$Think.session.ycblog1224userinfo.user_name}></span>
 
-               <span class="account-role">Administrator</span>
+               <span class="account-role">登录次数: <{$Think.session.ycblog1224userinfo.login_times}> 次</span>
 
                <span class="account-actions">
-							<a href="javascript:;">Profile</a> |
-
-							<a href="javascript:;">Edit Settings</a>
+							<a href="javascript:;" onclick="logout()">退出</a>
 						</span>
 
            </div> <!-- /account-details -->
-
        </div> <!-- /account-container -->
-
-       <hr />
-
+ <hr />
    </if>
 
     <ul id="main-nav" class="nav nav-tabs nav-stacked">

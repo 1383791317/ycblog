@@ -3,10 +3,10 @@ return array(
 //*************************************网站设置****************************************
     'WEB_STATUS'                =>  '1',           //网站状态1:开启 0:关闭
     'WEB_CLOSE_WORD'            =>  '网站升级中，请稍后访问。',       //网站关闭时提示文字
-    'WEB_ICP_NUMBER'            =>  '豫ICP备17044556号',       // 网站ICP备案号
+    'WEB_ICP_NUMBER'            =>  '豫ICP备17044556号-1',       // 网站ICP备案号
     'ADMIN_EMAIL'               =>  'yc_1224@163.com',          // 站长邮箱
     'WEB_K_ARR'                 =>array(
-       'name'=>'知识点',
+       'name'=>'小笔记',
        'css_name'=>'icon-signal'
     ),
     //*************************************优化推广****************************************
@@ -28,8 +28,8 @@ return array(
 //    'IMAGE_WATER_ALPHA'         =>  '80',    //图片水印 水印透明度：0-100
 
 //*************************************第三方登录****************************************
-//    'QQ_APP_ID'                 =>  '',            // QQ登录APP D
-//    'QQ_APP_KEY'                =>  '',           // QQ登录APP KEY
+    'QQ_APP_ID'                 =>  '101443168',            // QQ登录APP D
+    'QQ_APP_KEY'                =>  '5143e552ed17efc9ddb59cbc8809bed8',           // QQ登录APP KEY
 //    'SINA_API_KEY'              =>  '',         // 新浪登录API KEY
 //    'SINA_SECRET'               =>  '',          // 新浪登录SECRET
 //    'DOUBAN_API_KEY'            =>  '',       // 豆瓣登录API KEY

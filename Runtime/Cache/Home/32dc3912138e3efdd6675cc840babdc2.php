@@ -11,7 +11,6 @@
 <link href="/Template/default/Home/Public/css/bootstrap.min.css" rel="stylesheet" />
 <link href="/Template/default/Home/Public/css/bootstrap-responsive.min.css" rel="stylesheet" />
 
-<link href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600" rel="stylesheet" />
 <link href="/Template/default/Home/Public/css/font-awesome.css" rel="stylesheet" />
 
 <link href="/Template/default/Home/Public/css/adminia.css" rel="stylesheet" />
@@ -21,7 +20,7 @@
 <link href="/Template/default/Home/Public/css/my.css" rel="stylesheet" />
 <link rel="stylesheet" type="text/css" href="/Template/default/Home/Public/css/audio.css">
 
-
+<script src="/Template/default/Home/Public/js/baidu_js_push.js"></script>
 <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
 <!--[if lt IE 9]>
 <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,12 +62,31 @@
                         <li><a href="/" onclick="recordId('/',0)">首页</a></li>
                    <?php if(is_array($articleType)): $i = 0; $__LIST__ = $articleType;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><li><a href="/index.php/Home/Index/category/tid/<?php echo ($v["tid"]); ?>"><?php echo ($v["name"]); ?></a></li><?php endforeach; endif; else: echo "" ;endif; ?>
                     <li class="divider-vertical"></li>
-                    <?php if($_SESSION['ycblogyangchaouserinfo']== ''): ?><li class="dropdown" style="width:100px;padding-left: 20px;">
+                    <?php if($_SESSION['ycblogyangchaouserinfo']== ''): ?><li class="dropdown">
 
                             <p data-toggle="dropdown" class="dropdown-toggle">
-                                登录
+                                登录 <b class ="caret"></b>
                             </p>
+
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="<?php echo U('Home/User/oauth_login',array('type'=>qq));?>"> <img src="/Template/default/Home/Public/img/qq.png" width="20px"/> QQ  </a>
+                                </li>
+
+                                <li>
+                                    <a href=""><img src="/Template/default/Home/Public/img/weibo.png" width="20px"/></i> 微博</a>
+                                </li>
+                                <li>
+                                    <a href="./account.html"> <img src="/Template/default/Home/Public/img/zhanghao.png" width="20px"/>  账号 </a>
+                                </li>
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="./"><a href="./account.html"> <img src="/Template/default/Home/Public/img/zhuce.png" width="20px" style="margin-bottom: 5px"/>  注册 </a></a>
+                                </li>
+                            </ul>
                         </li>
+                        <li class="divider-vertical"></li>
                         <?php else: ?>
                         <li class="dropdown">
 
@@ -91,7 +109,8 @@
                                     <a href="./"><i class="icon-off"></i> Logout</a>
                                 </li>
                             </ul>
-                        </li><?php endif; ?>
+                        </li>
+                        <li class="divider-vertical"></li><?php endif; ?>
                     <li>
                         <form class="search_form_title" action="/index.php/Home/Index/search" method="get">
                         <input class="search_whole_title" value="" name="keywords" placeholder="全站搜索">
@@ -150,35 +169,30 @@
 
 </script>
 <div class="span3">
-
         <form class="search_form" action="<?php echo U('Home/Knowledge/index');?>" method="get">
-        <input class="search_whole" value="" name="keywords" placeholder="所搜<?php echo (C("WEB_K_ARR.name")); ?>">
+        <input class="search_whole" value="" name="keywords" placeholder="搜索<?php echo (C("WEB_K_ARR.name")); ?>">
         <input type="submit" class="search_button" value="GO"/>
     </form>
 
-    <?php if($_SESSION['ycblog1224userinfo']!= ''): ?><div class="account-container">
+     <?php if($_SESSION['ycblog1224userinfo']!= ''): ?><div class="account-container">
 
-            <div class="account-avatar">
-                <img src="./img/headshot.png" alt="" class="thumbnail" />
-            </div> <!-- /account-avatar -->
+           <div class="account-avatar">
+               <img src="<?php echo ($_SESSION['ycblog1224userinfo']['head_img']); ?>" alt="" class="thumbnail" />
+           </div> <!-- /account-avatar -->
 
-            <div class="account-details">
+           <div class="account-details">
 
-                <span class="account-name">Rod Howard</span>
+               <span class="account-name"><?php echo ($_SESSION['ycblog1224userinfo']['user_name']); ?></span>
 
-                <span class="account-role">Administrator</span>
+               <span class="account-role">登录次数: <?php echo ($_SESSION['ycblog1224userinfo']['login_times']); ?> 次</span>
 
-                <span class="account-actions">
-							<a href="javascript:;">Profile</a> |
+               <span class="account-actions">
+                            <a href="javascript:;" onclick="logout()">退出</a>
+                        </span>
 
-							<a href="javascript:;">Edit Settings</a>
-						</span>
-
-            </div> <!-- /account-details -->
-
-        </div> <!-- /account-container -->
-
-        <hr /><?php endif; ?>
+           </div> <!-- /account-details -->
+       </div> <!-- /account-container -->
+ <hr /><?php endif; ?>
 
     <ul id="main-nav" class="nav nav-tabs nav-stacked">
 
@@ -195,7 +209,7 @@
             </li><?php endforeach; endif; else: echo "" ;endif; ?>
         <li>
             <a href="<?php echo U('Home/Knowledge/index');?>">
-                <i class="<?php echo (C("WEB_K_ARR.css_name")); ?>"></i><?php echo (C("WEB_K_ARR.name")); ?>
+                <img src="/Template/default/Home/Public/img/zhishi.png" width="20px;" > &nbsp;<?php echo (C("WEB_K_ARR.name")); ?>
 
             </a>
         </li>
@@ -217,10 +231,8 @@
         </div> <!-- /widget-header -->
 
         <div class="widget-content">
-            <p>
-                <?php if(is_array($articleLabel)): $i = 0; $__LIST__ = $articleLabel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Home/Index/label',array('lid'=>$v['lid']));?>" class="badge badge-warning colorRandom" style="line-height: 20px;padding: 3px 7px;" ><?php echo ($v["name"]); ?></a>
+                <?php if(is_array($articleLabel)): $i = 0; $__LIST__ = $articleLabel;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$v): $mod = ($i % 2 );++$i;?><a href="<?php echo U('Home/Index/label',array('lid'=>$v['lid']));?>" class="badge badge-warning colorRandom" style="line-height: 20px;margin: 3px 0 9px;" ><?php echo ($v["name"]); ?></a>
                     &nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
-            </p>
         </div> <!-- /widget-content -->
 
     </div> <!-- /widget -->
@@ -268,7 +280,8 @@
 
     <div class="container">
         <hr />
-        <p>&copy; 2012 Go Ideate.</p>
+        <p style="text-align: center">Copyright © 2017 <a href="http://www.ycblog.com.cn">www.yclog.com.cn</a> &nbsp;&nbsp;|&nbsp;&nbsp;<?php echo (C("WEB_ICP_NUMBER")); ?></p>
+        <p style="text-align: center">联系邮箱：<?php echo (C("ADMIN_EMAIL")); ?></p>
     </div> <!-- /container -->
 
 </div> <!-- /footer -->

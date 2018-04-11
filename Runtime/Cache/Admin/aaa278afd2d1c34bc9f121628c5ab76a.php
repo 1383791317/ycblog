@@ -37,7 +37,7 @@
         <input type="text" name="" placeholder=" 公告标题" style="width:250px" class="input-text">
         <button name="" class="btn btn-success" type="submit"><i class="Hui-iconfont">&#xe665;</i> 搜公告</button>
     </div>
-    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="dataLotdel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" data-title="添加文章" data-href="/index.php?s=/Admin/Article/articleAddPage" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加文章</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
+    <div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a href="javascript:;" onclick="dataLotdel()" class="btn btn-danger radius"><i class="Hui-iconfont">&#xe6e2;</i> 批量删除</a> <a class="btn btn-primary radius" data-title="添加文章" data-href="/index.php/Admin/Article/articleAddPage" onclick="Hui_admin_tab(this)" href="javascript:;"><i class="Hui-iconfont">&#xe600;</i> 添加文章</a></span> <span class="r">共有数据：<strong>54</strong> 条</span> </div>
     <div class="mt-20">
         <table class="table table-border table-bordered table-bg table-hover table-sort">
             <thead>
@@ -65,7 +65,7 @@
                     <td class="td-status"><?php if($v["is_show"] == 1): ?><span class="label label-success radius">已显示</span><?php else: ?><span class="label label-defaunt radius">不显示</span><?php endif; ?></td>
                     <td class="f-14 td-manage">
                         <?php if($v["is_show"] == 1): ?><a style="text-decoration:none" onClick="article_stop(this,'<?php echo ($v["id"]); ?>')" href="javascript:;" title="下架"><i class="Hui-iconfont">&#xe6de;</i></a><?php else: ?><a style="text-decoration:none" onClick="article_start(this,'<?php echo ($v["id"]); ?>')" href="javascript:;" title="发布"><i class="Hui-iconfont">&#xe6de;</i></a><?php endif; ?>
-                        <a style="text-decoration:none" class="ml-5" onClick="article_edit('文章编辑','/index.php?s=/Admin/Article/changeArticle/id/<?php echo ($v["id"]); ?>','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'<?php echo ($v["id"]); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+                        <a style="text-decoration:none" class="ml-5" onClick="article_edit('文章编辑','/index.php/Admin/Article/changeArticle/id/<?php echo ($v["id"]); ?>','10001')" href="javascript:;" title="编辑"><i class="Hui-iconfont">&#xe6df;</i></a> <a style="text-decoration:none" class="ml-5" onClick="article_del(this,'<?php echo ($v["id"]); ?>')" href="javascript:;" title="删除"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
                 </tr><?php endforeach; endif; else: echo "" ;endif; ?>
             </tbody>
         </table>
@@ -115,7 +115,7 @@
         layer.confirm('确认要删除吗？',function(index){
             $.ajax({
                 type: 'get',
-                url: '/index.php?s=/Admin/Article/delArticle/id/'+id,
+                url: '/index.php/Admin/Article/delArticle/id/'+id,
                 dataType: 'json',
                 success: function(data){
     //                alert(data)
@@ -137,7 +137,7 @@
             if ($('#chk:checked')){
                 $(".checkbox:checked").each(function () {
                     var id =$(this).val();
-                    $.get("/index.php?s=/Admin/Article/delArticle",{id:id},function (data) {
+                    $.get("/index.php/Admin/Article/delArticle",{id:id},function (data) {
                         if (data.flag=='success') {
                             $(".checkbox:checked").parent().parent().remove();
                             layer.msg(data.msg, { icon: 5, time: 1000 })
@@ -149,7 +149,7 @@
             }else{
                 $(".checkbox:checked").each(function () {
                     var id =$(this).val();
-                    $.get("/index.php?s=/Admin/Article/delArticle",{id:id},function (data) {
+                    $.get("/index.php/Admin/Article/delArticle",{id:id},function (data) {
                         if (data.flag=='success') {
                             $(".checkbox:checked").parent().parent().remove();
                             layer.msg(data.msg, { icon: 5, time: 1000 })
@@ -184,7 +184,7 @@
     function article_stop(obj,id) {
         layer.confirm('确认要不显示吗？', function (index) {
             $.ajax({
-                url:'/index.php?s=/Admin/Article/changeStatus',
+                url:'/index.php/Admin/Article/changeStatus',
                 type:'get',
                 data:{status:0,id:id},
                 dataType:'json',
@@ -205,7 +205,7 @@
     function article_start(obj,id){
         layer.confirm('确认要显示吗？',function(index){
             $.ajax({
-                url:'/index.php?s=/Admin/Article/changeStatus',
+                url:'/index.php/Admin/Article/changeStatus',
                 type:'get',
                 data:{status:1,id:id},
                 dataType:'json',

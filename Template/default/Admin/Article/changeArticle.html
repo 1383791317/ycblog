@@ -20,21 +20,19 @@
                 <input type="text" class="input-text" value="<{$article.author}>" placeholder="" id="author" name="author">
             </div>
         </div>
-        <!--<div class="row cl">-->
-            <!--<label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章类型：</label>-->
-            <!--<div class="formControls col-xs-8 col-sm-9"> <span class="select-box">-->
-				<!--<select name="tid" class="select">-->
-                    <!--<volist name="type" id="v">-->
-                         <!--<if condition="$article.tid eq $v.tid">-->
-                            <!--<option value="<{$v.tid}>" selected><{$v.name}></option>-->
-                        <!--</if>-->
-                        <!--<if condition="$article.tid neq $v.tid">-->
-                            <!--<option value="<{$v.tid}>"><{$v.name}></option>-->
-                        <!--</if>-->
-                    <!--</volist>-->
-				<!--</select>-->
-				<!--</span> </div>-->
-        <!--</div>-->
+      <div class="row cl">
+            <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章类型：</label>
+            <div class="formControls col-xs-8 col-sm-9"> <span class="select-box">
+				<select name="tid" class="select">
+                    <volist name="type" id="v">
+                        <if condition="$article.tid eq $v.tid">
+                          <option value="<{$v.tid}>" selected><{$v.name}></option>
+                        </if>
+                           <option value="<{$v.tid}>"><{$v.name}></option>
+                    </volist>
+				</select>
+				</span> </div>
+        </div>
         <div class="row cl">
             <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标签：</label>
             <div class="formControls col-xs-8 col-sm-9">

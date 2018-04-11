@@ -53,10 +53,11 @@ class ArticleController extends AdminBaseController{
         }else{
             $id = I('get.id');
             $result = $this->db->where("id={$id}")->find();
-            //$article_type = M('ArticleType')->select();
+            $article_type = M('ArticleType')->select();
             $label = M('ArticleLabel')->select();
             $label_y = M('AlRelation')->where("aid={$result['id']}")->field('lid')->select();
             $assign = array('article'=>$result,'label'=>$label,'label_y'=>$label_y);
+            $this->assign('type',$article_type);
             $this->assign($assign);
             $this->display();
         }
@@ -176,7 +177,7 @@ class ArticleController extends AdminBaseController{
     }
     public function knowledgeadd(){
         if (IS_POST){
-           // print_r($this->kdb->knowledgeAdd());
+           //print_r($this->kdb->knowledgeAdd());
            echo $this->kdb->knowAdd();
         }else{
             $this->display();
@@ -184,8 +185,8 @@ class ArticleController extends AdminBaseController{
     }
     public function changeKnowledge(){
         if (IS_POST){
-           // print_r($_POST);
-           echo $this->kdb->changeKnowledge();
+           // print_r($this->kdb->changeKnowledge());
+          echo $this->kdb->changeKnowledge();
         }else{
             $assign = $this->kdb->selectData();
             $this->assign($assign);
