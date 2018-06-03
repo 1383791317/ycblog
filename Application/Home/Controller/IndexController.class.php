@@ -1,5 +1,4 @@
 <?php
-// 本类由系统自动生成，仅供测试用途
 namespace Home\Controller;
 use Common\Controller\HomeBaseController;
 use Think\Controller;
@@ -88,6 +87,11 @@ class IndexController extends HomeBaseController{
         cookie('lid',null);
         cookie('search_word',$keywords);
         $this->assign($assign);
+        $this->display();
+    }
+
+     public function login()
+    {
         $this->display();
     }
 }

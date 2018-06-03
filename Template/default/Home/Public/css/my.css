@@ -4,7 +4,7 @@
 .my_css_yue>a{color: #fff9ec;}
 .my_css_content_img>img{float:left; width: 220px;height:165px; margin-right:20px; }
 .my_css_title_article{border-bottom:1px solid #ffffff;padding-bottom: 10px; }
-@media only screen and (min-width: 100px) and (max-width: 1200px) {
+@media only screen and (min-width: 100px) and (max-width: 667px) {
     .my_css_title>li{display:block;float:left;width: 180px;height: 18px;}
     .my_css_content_img>img{display: none;}
     .pages a,
@@ -20,8 +20,24 @@
     .search_form{display: none}
     .search_whole_title{margin-left: 20px;}
     .search_button_title{ background-color: #00B83F;border: 1px solid #000000;color: #ffffff}
+    .commont-input,.commont-input-bottom{width: 93%;}
+   .commont-content-left>img{display:none;}
+   .commont-content-right{
+        width: 100%;
+        float: left;
+    }
+    .commont-user-user{
+          width: 100%; 
+          float: left;
+    }
 }
 @media only screen and (min-width: 667px) and (max-width: 8000px) {
+     .commont-content-left>img{
+        width: 70%;
+        height: 50px;
+        margin:10px 0 0 10px;
+        border-radius: 50%;
+    }
     .my_css_title>li{display:block;float:left;width: 170px;height: 18px}
     .pages a,
     .pages span {
@@ -34,6 +50,19 @@
         border-radius: 3px;
     }
     .search_form_title{display: none}
+    .commont-input,.commont-input-bottom{width: 96%;}
+    .commont-content-right{
+        width: 90%;
+        float: left;
+    }
+    .commont-user{
+        padding-top: 20px; 
+    }
+    .commont-user-user{
+         width: 90%; 
+         float: left;
+         margin-left:70px;
+    }
 }
 .search_whole{ height: 32px;}
 .search_button{color: #00a0e9; line-height: 30px;background-color: #fff5d4;width: 40px; border-radius: 5px; border-style: solid; margin-bottom: 9px;padding: 5px 10px;}
@@ -68,4 +97,130 @@
     color: #FFF;
     font-weight: 700;
     border-color:  #00a0e9;
+}
+.img-content{
+    background: #FFF;
+    border: 1px solid #D5D5D5;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.img-content>img{
+   width: 100%;
+   height: 180px;
+}
+.my-commont,.my-commont-user{
+    float: left;
+    width: 100%;
+}
+.commont-input,.commont-input-bottom{
+    height: 80px;
+    border: 1px solid #e84851;
+    border-radius: 8px;
+    resize:none;
+    padding: 10px;
+    font-size: 40px;
+    text-align: center;
+    font-family:"宋体";
+    line-height: 80px;
+}
+.bottom-a{
+    float: right;
+    margin-right: 15px;
+    padding-top: 5px;
+}
+
+.bottom-a>a{
+    border: 1px solid red;
+    background: #FF4500;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #ffffff;
+    margin-left: 8px;
+}
+.bottom-a>a:hover{
+    text-decoration:none;
+    background: #e74851;
+    border: 1px solid #e74851;
+    cursor:pointer;
+}
+.boottom-face{
+    float: left;
+    padding-left: 10px; 
+}
+
+.newest-commont{
+    float: left;
+     width: 100%;
+     padding-top: 20px; 
+     height: 25px;
+     border-bottom: 1px solid #e84851;
+}
+.newest-commont>span{
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+    border: 1px solid #e84851; 
+    border-bottom: none;
+    border-top: none;
+    padding-top: 3px;
+    font-size: 16px;
+    color: #e84851;
+}
+
+.commont-content-null{
+    float: left;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    background-color: #f8f8f8;
+    padding-top:10px;
+    color: #CCCCCC;
+}
+.commont-content{
+    width: 100%;
+
+    float: left;
+    padding-bottom: 10px;
+}
+
+.commont-content-left{
+    width: 10%;
+    float: left;
+}
+
+.commont-user>p{
+   margin-bottom: 0 !important; 
+}
+.commont-time{
+    display: inline-block;
+    float: right;
+    color: #000000 !important;
+}
+.commont-reply{
+    display: inline-block;
+    float: right;
+    padding-right: 20px; 
+    color: #00CCFF !important;
+}
+.commont-reply:hover{
+    cursor:pointer;
+    color: #00FFFF !important;
+}
+.commont-content-right span{
+    color: #e84851;
+}
+.commont-user-user span{
+    color: #e84851;
+}
+.commentContainer{
+    width: auto;
+    height: auto;
+    /*overflow: hidden;*/
+}
+.my-commont-user{
+    float: left;
+}
+.face:hover{
+    cursor:pointer;
 }

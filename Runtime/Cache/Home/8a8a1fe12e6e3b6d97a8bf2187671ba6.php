@@ -243,7 +243,7 @@
     <hr />
 
 
-        <div class="widget">
+    <div class="widget">
 
             <div class="widget-header">
                 <h3>热门标签</h3>
@@ -254,7 +254,18 @@
                        &nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
             </div> <!-- /widget-content -->
 
-        </div> <!-- /widget -->
+    </div> <!-- /widget -->
+    <div class="widget">
+
+            <div class="widget-header">
+                <h3>微信公众号</h3>
+            </div> <!-- /widget-header -->
+
+            <div class="img-content">
+                <img src="/Public/image/qrcode_for_gh_faded6233382_258.jpg">
+            </div> <!-- /widget-content -->
+
+    </div> <!-- /widget -->
     <div class="widget">
 
         <div class="widget-header">
@@ -310,7 +321,6 @@
 <!-- Le javascript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->
-<script src="/Template/default/Home/Public/js/jquery-1.7.2.min.js"></script>
 <script src="/Template/default/Home/Public/js/excanvas.min.js"></script>
 <script src="/Template/default/Home/Public/js/jquery.flot.js"></script>
 <script src="/Template/default/Home/Public/js/jquery.flot.pie.js"></script>

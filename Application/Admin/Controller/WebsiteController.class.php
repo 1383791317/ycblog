@@ -90,4 +90,26 @@ class WebsiteController extends AdminBaseController{
             $this->display();
         }
     }
+     public function sg(){
+        $result= M('sg_mployment')->select();
+        $this->assign('sg',$result);
+        $this->display();
+    }
+    public function delsg(){
+        $id = $_GET['id'];
+        $img = M('sg_mployment')->where(array('id'=>$id))->getField('photo');
+        unlink('.'.$img);
+        $result = M('sg_mployment')->where(array('id'=>$id))->delete();
+        if ($result) {
+            echo json_encode('success');
+        }else{
+            echo json_encode('error');
+        }
+    }
+    public function img(){
+        $id = $_GET['id'];
+        $img = M('sg_mployment')->where(array('id'=>$id))->getField('photo');
+        $this->assign('img',$img);
+        $this->display();
+    }
 }

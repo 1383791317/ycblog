@@ -27,15 +27,19 @@
 <![endif]-->
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" type="text/css" href="/Template/default/Home/Public/js/emoji/jquery.sinaEmotion.css">
+    <script src="/Template/default/Home/Public/js/emoji/jquery.min.js"></script>
     <style>
         @media only screen and (min-width: 100px) and (max-width: 600px) {
             .my_css_content{width: 300px;overflow: hidden;}
         }
         @media only screen and (min-width: 600px) and (max-width: 900px) {
             .my_css_content{width: 450px;overflow: hidden;}
+    
         }
         @media only screen and (min-width: 1000px) and (max-width: 1200px) {
             .my_css_content{width: 600px;overflow: hidden;}
+            
         }
     </style>
 </head>
@@ -74,10 +78,10 @@
                                 </li>
 
                                 <li>
-                                    <a href=""><img src="/Template/default/Home/Public/img/weibo.png" width="20px"/></i> 微博</a>
+                                    <a href="<?php echo U('Home/User/login');?>"><img src="/Template/default/Home/Public/img/weibo.png" width="20px"/></i> 微博</a>
                                 </li>
                                 <li>
-                                    <a href="./account.html"> <img src="/Template/default/Home/Public/img/zhanghao.png" width="20px"/>  账号 </a>
+                                    <a href=""> <img src="/Template/default/Home/Public/img/zhanghao.png" width="20px"/>  账号 </a>
                                 </li>
                                 <li class="divider"></li>
 
@@ -128,14 +132,11 @@
 
 <div id="content">
 <div class="container">
-
     <div class="row">
-
         <div class="span8">
             <div class="row">
                 <div class="span8">
-                    <div class="widget">
-                        <div class="widget-content">
+                     <div class="widget-content">
                             <h2 style="text-align: center">
                                 <?php echo ($article["title"]); ?>
                             </h2>
@@ -163,13 +164,43 @@
                                 <br/>
                                 <p style="text-align: center"><?php echo (C("COPYRIGHT_WORD")); ?></p>
                             </div>
-                        </div> <!-- /widget-content -->
+
+                            <!-- 畅言评论 -->
+                            <div class="my-commont">
+                                <textarea class="commont-input"  onfocus="changeInner(this)"><?php echo (C("WEB_NAME")); ?></textarea>
+                                <div class="boottom-face">
+                                    <img src="/Template/default/Home/Public/img/face.png" onclick="changeFace(this)">
+                                </div>
+                                <div class="bottom-a">
+                                        <a href="javascript:;" onclick="publish(this)">评论</a>
+                                </div>
+                            </div>
+                            <div class="newest-commont">
+                                <span>评论</span>
+                            </div>
+                            <?php if($a == ''): ?><div class="commont-content repalyVaule">
+                                    <div class="commont-content-left"><img src="/Template/default/Home/Public/img/music_img/cover5.jpg"></div>
+                                    <div class="commont-content-right">
+
+                                        <div class="commont-user repalyItFather">
+                                            <p><span>评论用户名</span><span class="commont-time">2018年4月5号</span></p>
+                                             <p>评论内容 <span class="commont-reply" onclick="repalyIt(this)">回复</span></p> 
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="commont-user-user repalyItFather repalyVaule">
+
+                                            2018年4月6号&nbsp;&nbsp; <span>柱子</span> &nbsp;&nbsp;<b>回复了</b>&nbsp;&nbsp;<span>黄磊</span>：水电费是否对 <span class="commont-reply" onclick="repalyIt(this)">回复</span></p>
+                                </div>
+                                <?php else: ?>
+                                <div class="commont-content-null">
+                                    暂无品论,快来占个楼!
+                                </div><?php endif; ?>
                     </div> <!-- /widget -->
                 </div>
             </div> <!-- /row -->
-
         </div>
-        <script>
+      <script>
  function logout(){
     $.ajax({
       url:'./index.php/Home/User/logout',
@@ -241,7 +272,7 @@
     <hr />
 
 
-        <div class="widget">
+    <div class="widget">
 
             <div class="widget-header">
                 <h3>热门标签</h3>
@@ -252,7 +283,18 @@
                        &nbsp;<?php endforeach; endif; else: echo "" ;endif; ?>
             </div> <!-- /widget-content -->
 
-        </div> <!-- /widget -->
+    </div> <!-- /widget -->
+    <div class="widget">
+
+            <div class="widget-header">
+                <h3>微信公众号</h3>
+            </div> <!-- /widget-header -->
+
+            <div class="img-content">
+                <img src="/Public/image/qrcode_for_gh_faded6233382_258.jpg">
+            </div> <!-- /widget-content -->
+
+    </div> <!-- /widget -->
     <div class="widget">
 
         <div class="widget-header">
@@ -288,9 +330,7 @@
 
     </div>
 </div>
-
 </div>
-
 
 
 <div id="footer">
@@ -302,14 +342,66 @@
     </div> <!-- /container -->
 
 </div> <!-- /footer -->
+ <script src="/Template/default/Home/Public/js/emoji/jquery.sinaEmotion.js"></script>
+ <script type="/Template/default/Home/Public/js/emoji/jquery-sinaEmotion-2.1.0.min.js"></script>   
+<script type="text/javascript"> 
+        function changeFace(e){
+             if(! $('#sinaEmotion').is(':visible')){
+                    $(e).sinaEmotion();
+                    event.stopPropagation();
+                    $(e).parents('div').find('textarea').text('').css({"font-size":"16px","padding":"10px","line-height":"16px","font-family":"微软雅黑","text-align":"left"});
+                }
+        }
+        function changeInner(e){
+            $(e).text('');
+            $(e).css({"font-size":"16px","padding":"10px","line-height":"16px","font-family":"微软雅黑","text-align":"left"});
+        }
+
+        /*发表*/
+        function publish(e){
+            var content = $('.commont-input').val();
+            if ("<?php echo (session('ycblog1224userinfo')); ?>" == '') {tishi('请先登录');return false;}
+            if (content == '' || content == "<?php echo (C("WEB_NAME")); ?>") {tishi('评论不能为空');return false;}
+            $(".widget-content").append("<div class='commont-content'><div class='commont-content-left'><img src='/Template/default/Home/Public/img/music_img/cover5.jpg'></div><div class='commont-content-right'><div class='commont-user repalyItFather'><p><span>评论用户名</span><span class='commont-time'>2018年4月5号</span></p><p>"+ content +"<span class='commont-reply' onclick='repalyIt(this)'>回复</span></p></div></div></div>").parseEmotion();
+        }
+        function publishUser(e){
+            $('.my-commont-user').css('display','none');
+            var  content = $('.commont-input-er').val();
+            if ("<?php echo (session('ycblog1224userinfo')); ?>" == '') {tishi('请先登录');return false;}
+            if (content == '' || content == "<?php echo (C("WEB_NAME")); ?>") {tishi('评论不能为空'); return false;}
+            $($(e).parents(".repalyVaule")).after('<div class="commont-user-user repalyItFather">2018年4月6号&nbsp;&nbsp; <span>柱子</span> &nbsp;&nbsp;<b>回复了</b>&nbsp;&nbsp;<span>黄磊</span>：'+ content +' <span class="commont-reply" onclick="repalyIt(this)">回复</span></p></div>').parseEmotion();
+            
+        }   
+        function tishi(txt, time, status) {  
+            var htmlCon = '';  
+            if (txt != '') {  
+                if (status != 0 && status != undefined) {  
+                    htmlCon = '<div class="tipsBox" style="width:220px;opacity:0.8;padding:10px;background-color:#4AAF33;border-radius:5px;-webkit-border-radius: 4px;-moz-border-radius: 4px;box-shadow:0 0 3px #ddd inset;-webkit-box-shadow: 0 0 3px #ddd inset;text-align:center;position:fixed;top:25%;left:50%;z-index:999999;margin-left:-120px;"><img src="images/ok.png" style="vertical-align: middle;margin-right:5px;" alt="OK，"/>' + txt + '</div>';  
+                } else {  
+                    htmlCon = '<div class="tipsBox" style="width:200px;padding:10px;opacity:0.8;background-color:#bfbfbf;border-radius:5px;-webkit-border-radius: 4px;-moz-border-radius: 4px;box-shadow:0 0 3px #ddd inset;-webkit-box-shadow: 0 0 3px #ddd inset;text-align:center;position:fixed;top:25%;left:50%;z-index:999999;margin-left:-120px;"><img src="/Template/default/Home/Public/img/error.png" style="vertical-align: middle;margin-right:5px;" alt="Error，"/><span style="font-size:18px;display:inline-block;margin:5px 0 0 10px;">' + txt + '</span></div>';  
+                }  
+                $('body').prepend(htmlCon);  
+                if (time == '' || time == undefined) {  
+                    time = 1500;  
+                }  
+                 setTimeout(function() {  
+                    $('.tipsBox').remove();  
+                }, time);
+            } 
+        }
+        function noneDiv(){
+            $('.my-commont-user').css('display','none');
+        }
 
 
 
+        function repalyIt(e){
+            $('.my-commont-user').css('display','none');
+            $($(e).parents(".repalyItFather")).append('<div class="my-commont-user"><textarea class="commont-input" onfocus="changeInner(this)"><?php echo (C("WEB_NAME")); ?></textarea><div class="boottom-face"><img src="/Template/default/Home/Public/img/face.png" onclick="changeFace(this)"></div><div class="bottom-a"><a href="javascript:;" onclick="publish(this)">发表</a><a href="javascript:;" onclick="noneDiv(this)">取消</a></div><div></div></div>');
+        }
 
-<!-- Le javascript
-================================================== -->
-<!-- Placed at the end of the document so the pages load faster -->
-<script src="/Template/default/Home/Public/js/jquery-1.7.2.min.js"></script>
+</script>
+
 <script src="/Template/default/Home/Public/js/excanvas.min.js"></script>
 <script src="/Template/default/Home/Public/js/jquery.flot.js"></script>
 <script src="/Template/default/Home/Public/js/jquery.flot.pie.js"></script>

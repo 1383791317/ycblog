@@ -197,4 +197,5 @@ class ArticleController extends AdminBaseController{
        $result = $this->kdb->deleteData();
        echo json_encode($result);
     }
+
 }

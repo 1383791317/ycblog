@@ -72,7 +72,7 @@ function returnApiMessage($flag = '', $msg = null, $data = null) {
         'msg' => $msg,
         'data' => $data,
     );
-    return json_encode($result);
+    return json_encode($result);exit;
 }
 function selectLogo($logo_id){
     $model = M('ArticleLogo');
@@ -196,4 +196,24 @@ function RU($url){
         $url=str_replace(array('/index.php/Home','/One/kid'), '', $url);
     }
     return $url;
+}
+function resultJson($ret='',$msg=''){
+    echo json_encode(array('ret'=>$ret,'msg'=>$msg));exit;
+}
+ function upload_base64_img_comm($file,$dir,$number){
+        if (!file_exists($dir)){
+            mkdir ($dir,0777,true);
+        }
+        $file_path = date('YmdHis').rand(1,10000).$number.".png";
+        $paths = $dir.$file_path;
+        $file = substr(strstr($file, ','), 1);
+        if (!base64_decode($file)) {
+            resultJson('上传文件转码失败');
+        }
+        $result = file_put_contents($paths, base64_decode($file));
+        if ($result) {
+           return ltrim($paths,'.');
+        }else{
+            resultJson('图片上传失败');
+        }
 }

@@ -21,4 +21,6 @@ class UserController extends HomeBaseController {
     public function logout(){
         session('ycblog1224userinfo',null);
     }
+
+   
 }

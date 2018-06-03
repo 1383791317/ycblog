@@ -13,12 +13,9 @@ class AdminBaseController extends BaseController{
     public function _initialize(){
         $name = $_SESSION['ycblogyangchaohangadminname'];
         $pwd = $_SESSION['ycblogyangchaohangadminpwd'];
-        if (empty($name)||empty($pwd)){
-            redirect(U('Admin/Login/index'));
-        }
         $result = M('Admin')->where(array('name'=>$name,'password'=>$pwd))->find();
         if (empty($result)){
-            redirect(U('Admin/Login/index'));
+            redirect('./error');
         }
     }
 
